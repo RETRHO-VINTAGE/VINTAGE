@@ -18,6 +18,7 @@ The new platform will be designed for:
 - RETRHO Members – to organize and manage their research projects efficiently.
 - UF Students & Researchers – to access and collaborate on astronomical studies.
 - The General Public – to learn about space phenomena and follow the observatory’s work.
+
 By creating a more interactive and well-structured online presence, this project will enhance the visibility of RETRHO’s work while ensuring that valuable observational data is easily accessible and well-preserved for future use.
 
 ## VINTAGE Team
