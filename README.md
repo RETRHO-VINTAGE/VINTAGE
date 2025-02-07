@@ -1,4 +1,8 @@
 # RETRHO Website, by VINTAGE
+
+![image](https://github.com/user-attachments/assets/51a81f13-ccc5-4396-b2aa-34cb41aa4ead)
+
+
 ## About the Project
 VINTAGE, in collaboration with the Remote Experimental Team at Rosemary Hill Observatory (RETRHO), is developing a new website to improve public engagement and streamline data management for the observatory. Under the guidance of Dr. Jamie Tayar, this platform will serve as a hub for sharing astronomical observations, scheduling telescope usage, and organizing internal team resources.
 
