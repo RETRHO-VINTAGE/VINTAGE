@@ -4,23 +4,24 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>RETRHO</title>
-    <link rel="stylesheet" href="css/styles.css">
+    
+    <!-- Link Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/style.css">
     <script type="module" src="js/script.js"></script>
 </head>
 <body>
-    <header>
-        <h1>RETRHO</h1>
-        <nav>
-            <ul>
-                <li><a href="#">Home</a></li>
-                <li><a href="#">About Telescope</a></li>
-                <li><a href="#">Portfolio</a></li>
-                <li><a href="dataPortal.html">Explore Data</a></li>
-                <li><a href="#">Request Targets</a></li>
-                <li><a href="contact.html">Contact and FAQ</a></li>
-            </ul>
-        </nav>
-    </header>
+    <div class="navbar">
+        <a href="#">Telescope</a>
+        <a href="#">Portfolio</a>
+        <a href="dataPortal.html">Explore Data</a>
+        <a href="#">Request Targets</a>
+        <a href="contact.html">Contact US/FAQ</a>
+        <a href="#">Login</a>
+    </div>
     
     <main>
         <section>
@@ -28,10 +29,19 @@
             <p>This is a placeholder for your website content.</p>
         </section>
     </main>
-    
+
+    <!-- Gallery-->
+    <div class="gallery">
+        <img src="images/RHO_Homepage.jpg" class="active" alt="Image 1">
+        <img src="images/Telescope.jpg" alt="Image 2">
+    </div>
+
+    <!-- Footer Section -->
     <footer>
         <p>[insert contact info here]</p>
         <p>&copy; 2025 RETRHO. All rights reserved.</p>
     </footer>
+
 </body>
 </html>
+
