@@ -19,12 +19,12 @@ header {
 
 nav a {
     text-decoration: none;
-    color: white;
+    font-size: 18px;
 }
 
-    nav a:hover {
-        color: #ff6600;
-    }
+.navbar a:hover {
+    background-color: #ddd;
+}
 
 footer {
     text-align: center;
