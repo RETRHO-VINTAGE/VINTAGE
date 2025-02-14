@@ -1,14 +1,19 @@
-// Basic script.js
-
-// Log to the console when the page loads
 console.log('RETRHO website loaded.');
 
-// Simple function to change text when the page is ready
+let index = 0;
+const images = document.querySelectorAll('.gallery img');
+
+function changeImage() {
+    images[index].classList.remove('active');
+    index = (index + 1) % images.length;
+    images[index].classList.add('active');
+}
+
+setInterval(changeImage, 3000);
+
 function changeText() {
     const welcomeText = document.querySelector('main p');
     welcomeText.textContent = 'Welcome to the RETRHO website. Enjoy your stay!';
 }
 
-// Call the function when the page is loaded
 document.addEventListener('DOMContentLoaded', changeText);
-
