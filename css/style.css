@@ -11,6 +11,15 @@ body {
     margin: 0;
 }
 
+/* Header styling */
+header {
+    background-color: #333;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+
 .navbar {
     background-color: white;
     overflow: hidden;
@@ -19,22 +28,21 @@ body {
     padding: 10px 0;
 }
 
-    .navbar a {
-        color: black;
-        padding: 14px 20px;
-        text-decoration: none;
-        font-size: 18px;
-    }
+.navbar a {
+    color: black;
+    padding: 14px 20px;
+    text-decoration: none;
+    font-size: 18px;
+}
 
-        .navbar a:hover {
-            background-color: #ddd;
-        }
-
-        .navbar a img.logo {
-            height: 40px;  
-            width: auto;   
-            margin-right: 2px; 
-        }
+.navbar a:hover {
+    background-color: #ddd;
+}
+.navbar a img.logo {
+    height: 40px;  
+    width: auto;   
+    margin-right: 2px; 
+}
 
 button {
     padding: 10px 20px;
@@ -65,3 +73,15 @@ button {
         .gallery img.active {
             opacity: 1;
         }
+
+/* Footer styling */
+footer {
+    text-align: center;
+    padding: 10px;
+    margin-top: 20px;
+    background-color: #002657;
+    color: white;
+    bottom: 0;
+    height: 100px;
+    width: 100%;
+}

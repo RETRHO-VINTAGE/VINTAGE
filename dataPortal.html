@@ -9,9 +9,9 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/portal.css">
 </head>
 <body>
-
     <!-- Navigation Bar -->
     <div class="navbar">
         <a href="index.html">
@@ -24,14 +24,29 @@
         <a href="contact.html">Contact US/FAQ</a>
         <a href="#">Login</a>
     </div>
-
-    <!-- Main Content -->
-    <main>
-        <section>
-            <h1>Explore Data</h1>
-            <p>content.</p>
-        </section>
-    </main>
+    <div class="pageTitle">Explore Data</div>
+    <div class="searchPortal">
+        <input type="text" placeholder="search objects...">
+        <table id="dataTable">
+            <tr class="tableHeader">
+                <th>Object Name</th>
+                <th>Date Observed</th>
+                <th>Filters</th>
+                <th>RA</th>
+                <th>DEC</th>
+                <th>Reduced</th>
+            </tr>
+            <tr class="tableData">
+                <td>sampleName</td>
+                <td>DD-MM-YYYY 2am</td>
+                <td>BGR</td>
+                <td>12:33:44.22</td>
+                <td>05:22:89.22</td>
+                <td>No</td>
+            </tr>
+        </table>
+    </div>
+    <footer>Contact Info Here</footer>
 
 </body>
 </html>
