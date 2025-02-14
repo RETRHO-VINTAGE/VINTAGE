@@ -19,16 +19,22 @@ body {
     padding: 10px 0;
 }
 
-.navbar a {
-    color: black;
-    padding: 14px 20px;
-    text-decoration: none;
-    font-size: 18px;
-}
+    .navbar a {
+        color: black;
+        padding: 14px 20px;
+        text-decoration: none;
+        font-size: 18px;
+    }
 
-.navbar a:hover {
-    background-color: #ddd;
-}
+        .navbar a:hover {
+            background-color: #ddd;
+        }
+
+        .navbar a img.logo {
+            height: 40px;  
+            width: auto;   
+            margin-right: 2px; 
+        }
 
 button {
     padding: 10px 20px;
