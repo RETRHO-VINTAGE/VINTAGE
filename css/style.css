@@ -1,3 +1,4 @@
+/* Reset some default styles */
 * {
     margin: 0;
     padding: 0;
@@ -5,19 +6,23 @@
 }
 
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
-    color: #333;
-}
-
-header {
-    background-color: #333;
-    color: white;
-    padding: 20px;
+    font-family: "Exo 2", sans-serif;
     text-align: center;
+    padding: 50px;
+    margin: 0;
 }
 
-nav a {
+.navbar {
+    background-color: white;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    padding: 10px 0;
+}
+
+.navbar a {
+    color: black;
+    padding: 14px 20px;
     text-decoration: none;
     font-size: 18px;
 }
@@ -26,11 +31,11 @@ nav a {
     background-color: #ddd;
 }
 
-footer {
-    text-align: center;
-    padding: 10px;
-    background-color: #333;
-    color: white;
+button {
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 20px;
 }
 
 .gallery {
