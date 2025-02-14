@@ -1,12 +1,47 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>RETRHO</title>
-    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/portal.css">
 </head>
 <body>
-    <h1>Explore Data</h1>
+    <div class="navbar">
+        <a href="#">Telescope</a>
+        <a href="#">Portfolio</a>
+        <a href="dataPortal.html">Explore Data</a>
+        <a href="#">Request Targets</a>
+        <a href="contact.html">Contact US/FAQ</a>
+        <a href="#">Login</a>
+    </div>
+    <div class="pageTitle">Explore Data</div>
+    <div class="searchPortal">
+        <input type="text" placeholder="search objects...">
+        <table id="dataTable">
+            <tr class="tableHeader">
+                <th>Object Name</th>
+                <th>Date Observed</th>
+                <th>Filters</th>
+                <th>RA</th>
+                <th>DEC</th>
+                <th>Reduced</th>
+            </tr>
+            <tr class="tableData">
+                <td>sampleName</td>
+                <td>DD-MM-YYYY 2am</td>
+                <td>BGR</td>
+                <td>12:33:44.22</td>
+                <td>05:22:89.22</td>
+                <td>No</td>
+            </tr>
+        </table>
+    </div>
+    <footer>Contact Info Here</footer>
+
 </body>
 </html>
