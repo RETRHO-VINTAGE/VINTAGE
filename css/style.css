@@ -173,3 +173,59 @@ footer {
     transform: translateX(0);
     opacity: 1;
 }
+
+.contact-section {
+    color: white; /* Light text for contrast */
+    text-align: center;
+    /*padding: 30px 0; /* Adds spacing around the section */
+    margin: 0;
+}
+
+/* Contact Page Title */
+.contact-section h1 {
+    font-size: 48px; /* Large title */
+    font-weight: 600;
+    margin-top: 100px; /* Moves title up */
+    margin-bottom: 0;
+}
+
+/* Contact Description */
+.contact-section p {
+    font-size: 22px; /* Slightly larger text */
+    margin-top: 100px; /* Adds spacing to separate it from the title */
+}
+
+/* Contact Info Styling */
+.contact-info a {
+    color: #1e90ff; /* Bright blue for contrast */
+    font-size: 22px;
+    font-weight: 500;
+    text-decoration: none;
+    display: block; /* Ensures proper spacing */
+    margin-top: -100px; /* Reduce space between text and email */
+    margin-bottom: 50px;
+}
+
+.contact-section a:hover {
+    text-decoration: underline;
+}
+
+/* Horizontal Rule Styling */
+.contact-section hr {
+    border: 1px solid #6a2a60; /* Subtle divider */
+    width: 100%;
+    margin: 0px;
+}
+
+.faq-section {
+    color: white; /* Light text for contrast */
+    text-align: center;
+    margin: 0;
+}
+
+.faq-section h2 {
+    font-size: 36px; /* Large title */
+    font-weight: 600;
+    margin-top: 10px; /* Moves title up */
+    margin-bottom: 10px;
+}
