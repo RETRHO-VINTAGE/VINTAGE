@@ -3,38 +3,69 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    background-color: #343741;
 }
 
 body {
     font-family: "Exo 2", sans-serif;
     text-align: center;
-    margin: 0;
+    margin: 80px 0 0 0;
 }
+
+/* Header styling */
+header {
+    background-color: #343741;
+    color: white;
+    /*padding: 20px;*/
+    text-align: center;
+}
+
 
 .navbar {
-    background-color: white;
+    background-color: #343741;
     overflow: hidden;
     display: flex;
-    justify-content: center;
-    padding: 10px 0;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: flex-start;
+    /*padding: 10px 0;*/
+    height: 70px;
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    z-index: 101;
+
 }
 
-    .navbar a {
-        color: black;
-        padding: 14px 20px;
-        text-decoration: none;
-        font-size: 18px;
-    }
+.navbarPage {
+    flex: 1;
+    color: white;
+    padding: 15px 10px 10px 10px;
+    text-decoration: none;
+    font-size: 18px;
+    text-align: center;
+    height: 70px;
+    /*border: 1px solid red;*/
+}
 
-        .navbar a:hover {
-            background-color: #ddd;
-        }
+.navbar .navbarPage:hover{
+    background-color: #6A2A60;
+    border-radius: 0 0 5px 5px;
+}
 
-        .navbar a img.logo {
-            height: 40px;  
-            width: auto;   
-            margin-right: 2px; 
-        }
+.navbarLogo{
+    width: auto;
+    margin: 10px 10px 10px 10px;
+}
+.navbarLogo img.logo {
+    height: 50px;
+    width: auto;
+    margin-right: 2px; 
+}
+
+
+
 
 button {
     padding: 10px 20px;
@@ -65,7 +96,19 @@ button {
         .gallery img.active {
             opacity: 1;
         }
-        
+
+
+/* Footer styling */
+footer {
+    text-align: center;
+    padding: 10px;
+    margin-top: 20px;
+    background-color: #002657;
+    color: white;
+    bottom: 0;
+    height: 100px;
+    width: 100%;
+
 /* Portfolio container */
 .portfolio-container {
     display: flex;
