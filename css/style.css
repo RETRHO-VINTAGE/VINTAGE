@@ -233,7 +233,7 @@ footer {
 
 /* Horizontal Rule Styling */
 .contact-section hr {
-    border: 1px solid #6a2a60; /* Subtle divider */
+    border: 0px solid #6a2a60; /* Subtle divider */
     width: 100%;
     margin: 0px;
 }
@@ -241,12 +241,43 @@ footer {
 .faq-section {
     color: white; /* Light text for contrast */
     text-align: center;
-    margin: 0;
+    max-width: 100%; /* Keep width consistent with the Contact section */
+    margin: auto; /* Center the section */
+    padding: 15px;
+    background-color: #2a2d36; /* Consistent dark background */
+    border-radius: 50px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Subtle shadow */
 }
 
 .faq-section h2 {
     font-size: 36px; /* Large title */
     font-weight: 600;
-    margin-top: 10px; /* Moves title up */
-    margin-bottom: 10px;
+    margin-bottom: 20px;
+    background-color: #2a2d36;
+}
+
+.faq-item {
+    text-align: left;
+    /*background-color: #3a3d46; /* Slightly lighter background for contrast */
+    padding: 15px;
+    margin: 10px 50px;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+.faq-item p {
+    font-size: 20px;
+    line-height: 1.6;
+    color: #d1d1d1;
+}
+
+.faq-item strong {
+    color: #ff7c1e; /* Highlight question-answer labels */
+    font-size: 25px;
+}
+
+.faq-section hr {
+    border: 0px solid #6a2a60; /* Subtle divider */
+    width: 100%;
+    margin: 20px;
 }
