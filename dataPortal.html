@@ -15,15 +15,15 @@
 <body>
     <!-- Navigation Bar -->
     <div class="navbar">
-        <a href="index.html">
+        <a href="index.html" class="navbarLogo">
             <img src="images/RETRHOlogo_official.png" alt="Logo" class="logo">
         </a>
-        <a href="telescope.html">Telescope</a>
-        <a href="portfolio.html">Portfolio</a>
-        <a href="dataPortal.html">Explore Data</a>
-        <a href="request_targets.html">Request Targets</a>
-        <a href="contact.html">Contact US/FAQ</a>
-        <a href="#">Login</a>
+        <a href="telescope.html" class="navbarPage">Telescope</a>
+        <a href="portfolio.html" class="navbarPage">Portfolio</a>
+        <a href="dataPortal.html" class="navbarPage">Explore Data</a>
+        <a href="request_targets.html" class="navbarPage">Request Targets</a>
+        <a href="contact.html" class="navbarPage">Contact US/FAQ</a>
+        <a href="#" class="navbarPage">Login</a>
     </div>
     <div class="pageTitle">Explore Data</div>
     <div class="searchPortal">
@@ -31,16 +31,20 @@
         <table id="dataTable">
             <tr class="tableHeader">
                 <th>Object Name</th>
+                <th>Object Type</th>
                 <th>Date Observed</th>
                 <th>Filters</th>
+                <th>Exposure Time &#91;s&#93;</th>
                 <th>RA</th>
                 <th>DEC</th>
                 <th>Reduced</th>
             </tr>
             <tr class="tableData">
                 <td>sampleName</td>
+                <td>supernovae</td>
                 <td>DD-MM-YYYY 2am</td>
                 <td>BGR</td>
+                <td>200</td>
                 <td>12:33:44.22</td>
                 <td>05:22:89.22</td>
                 <td>No</td>
