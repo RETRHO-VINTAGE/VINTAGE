@@ -1,20 +1,35 @@
+/*colorsss*/
+.coreOrange {color: #FA4616}
+.coreBlue {color: #0021A5}
+.bottlebrushRed {color: #D32737}
+.alachuaYellow {color: #F2A900}
+.gatorGreen {color: #22884c}
+.coreDarkBlue {color: #002657}
+.perennialPurple {color: #6A2A60}
+.coolGrey11 {color: #343741}
+.coolGrey3 {color: #C7C9C8}
+.warmGrey1 {color: #D8D4D7}
+
 /* Reset some default styles */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    background-color: #343741;
+    /*background-color: black;*/
+   
 }
 
 body {
     font-family: "Exo 2", sans-serif;
     text-align: center;
     margin: 80px 0 0 0;
+    color: white;
+    background-color: black;
 }
 
 /* Header styling */
 header {
-    background-color: #343741;
+    background-color: black;
     color: white;
     /*padding: 20px;*/
     text-align: center;
@@ -22,7 +37,7 @@ header {
 
 
 .navbar {
-    background-color: #343741;
+    background-color: black;
     overflow: hidden;
     display: flex;
     flex-direction: row;
@@ -107,4 +122,8 @@ footer {
     bottom: 0;
     height: 100px;
     width: 100%;
+}
+
+footer p{
+    background-color: #002657;
 }

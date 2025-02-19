@@ -1,46 +1,170 @@
+/*colorsss*/
+.coreOrange {color: #FA4616}
+.coreBlue {color: #0021A5}
+.bottlebrushRed {color: #D32737}
+.alachuaYellow {color: #F2A900}
+.gatorGreen {color: #22884c}
+.coreDarkBlue {color: #002657}
+.perennialPurple {color: #6A2A60}
+.coolGrey11 {color: #343741}
+.coolGrey3 {color: #C7C9C8}
+.warmGrey1 {color: #D8D4D7}
+
 .pageTitle {
+    position: relative;
+    width: 90%;
+    height: 30%;
     margin: auto;
-    color: black;
-    vertical-align: center;
-    align-items: center;
-    text-align: center;
+    /*vertical-align: center;
+    align-items: center;*/
+    margin-bottom: 10px;
+}
+.pageTitle img{
+    width: 100%;
+    height: 350px;
+    object-fit: cover;
+    border-radius: 20px;
+
+}
+.portalTitleText{
+    position: absolute;
+    top: 50%;
+    left: 50%;
     font: Exo;
     font-size: xx-large;
-    width: 75%;
-    background-color: lightblue;
-    padding-top: 10%;
-    padding-bottom: 10%;
-    margin-bottom: 10px;
+    color: white;
+    font-weight: bolder;
+    font-size: 50px;
+    transform: translate(-50%,-50%);
 }
 
 .searchPortal{
-
-}
-.searchPortal input{
-    font-family: "Exo 2", sans-serif;
-    border-width: 2px;
-    border-radius: 5px;
-    border-color: black;
-    width: 50%;
-    padding: 12px 12px;
-    margin-bottom: 20px;
-
-}
-#dataTable{
-    width: 75%;
-    border: 1px solid grey;
-    font-size: 18;
+    width: 90%;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    grid-template-rows: auto 1fr;
+    row-gap: 20px;
+    column-gap: 10px;
     margin: auto;
+    justify-content: center;
+}
+/*the search bar input*/
+.searchPortal input{
+    /*align-self: center;*/
+    height: 50px;
+    font-family: "Exo 2", sans-serif;
+    border: none;
+    border-bottom: 2px solid #D32737;
+    border-radius: 10px 10px 10px 10px;
+    width: 100%;
+    padding: 12px 12px;
+    
+    /*margin-bottom: 20px;*/
+    background-color: #C7C9C8;
+}
+.searchPortal input:focus{
+    outline: none;
+    border: 2px solid #FA4616;
+}
 
+/*checkboxes for types of search*/
+.searchTypes{
+    min-width: 160px;
+    /*background-color: #0021A5;*/
+    grid-column: 2;
+    grid-row: 1;
+    display: flexbox;
+    flex-direction: column;
+    border: 2px solid #D32737;
+    border-radius: 10px;
+    padding: 5px 10px 10px 10px;
+    font-size: medium;
+
+}
+.searchTypes label{
+    display: flex;
+    align-items: center;
+    margin-top: 0.5em;
+}
+.searchTypes input[type="radio"]{
+    height: 1.15em;
+    width: 1.15em;
+    font-size: medium;
+    border: 0.15em solid #D32737;
+    border-radius: 50%;
+    margin-right: 5px;
+}
+.searchTypes input:checked{
+    background-color: #F2A900;
+}
+.searchTypes input[type="checkbox"]{
+    height: 1.15em;
+    width: 1.15em;
+    margin-right: 5px;
+}
+
+
+/*Table*/
+#dataTable{
+    grid-column: 1 / span 2;
+    width: auto;
+    /*border: 1px solid grey;*/
+    font-size: 18;
+    border-radius: 20px;
+    border: none;
+    height: 50vw;
+    color: black;
 }
 .searchPortal table, th, tr, td{
-    border: 1px solid black;
+
+    /*border-collapse: collapse;
+    border-radius: 20px;
+    border: 1px solid darkgray;
+    background-color: lightsteelblue;
+    color: black;*/
+}
+.searchPortal table{
     border-collapse: collapse;
+    border-radius: 20px;
+    border: 1px solid darkgrey;
 }
-/*
 .searchPortal th{
-    border: 1px solid blue;
+    background-color: #FA4616;
+    color: black;
+    height: 30px;
+    border-left: 1px solid #343741;
+    border-right: 1px solid #343741;
+    /*border-radius: 20px 20px 0 0;
+    height: 30px;
+    border-top: none;*/
 }
-.searchPortal tr{
-    border: 1px solid green;
-}*/
+.searchPortal th:first-of-type{
+    border-radius: 20px 0 0 0;
+    border-right: 1px solid #343741;
+    border-left: none;
+}
+.searchPortal th:last-of-type{
+    border-radius: 0 20px 0 0;
+    border-left: 1px solid #343741;
+    border-right: none;
+}
+.searchPortal td{
+    border: 1px solid #343741;
+    background-color: #C7C9C8;
+}
+.searchPortal tr:last-of-type td:first-of-type{
+    border-radius: 0 0 0 20px;
+    border-left: none;
+    border-bottom: none;
+}
+.searchPortal tr:last-of-type td:last-of-type{
+    border-radius: 0 0 20px 0;
+    border-right: none;
+    border-bottom: none;
+}
+.searchPortal td:first-of-type{
+    border-left: none;
+}
+.searchPortal td:last-of-type{
+    border-right: none;
+}
