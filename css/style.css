@@ -89,11 +89,12 @@ button {
 }
 
 .gallery {
-    width: 100vw;
+    width: 100%;
     height: 80vh;
     overflow: hidden;
     position: relative;
     border-radius: 0;
+    margin: 0;
 }
 
     .gallery img {
@@ -105,6 +106,7 @@ button {
         left: 0;
         opacity: 0;
         transition: opacity 1s ease-in-out;
+        margin: 0;
     }
 
         .gallery img.active {
@@ -134,6 +136,11 @@ button {
     padding: 0; /* Removes any unintended padding */
     border: none; /* Ensures no border */
 }
+.gallery-overlay p{
+    font-size: 2rem;
+    color: white;
+    text-shadow: 3px 3px 10px rgba(0,0,0,0.7);
+}
 /* Footer styling */
 footer {
     text-align: center;
@@ -144,6 +151,9 @@ footer {
     bottom: 0;
     height: 100px;
     width: 100%;
+}
+footer p{
+    background-color: #002657;
 }
 
 /* Portfolio container */
@@ -211,10 +221,6 @@ footer {
 }
 
 
-footer p{
-    background-color: #002657;
-}
-
 .contact-section {
     color: black; /* Light text for contrast */
     text-align: center;
@@ -224,6 +230,7 @@ footer p{
 
 /* Contact Page Title */
 .contact-section h1 {
+    color: white;
     font-size: 48px; /* Large title */
     font-weight: 600;
     margin-top: 100px; /* Moves title up */
@@ -232,6 +239,7 @@ footer p{
 
 /* Contact Description */
 .contact-section p {
+    color: white;
     font-size: 22px; /* Slightly larger text */
     margin-top: 100px; /* Adds spacing to separate it from the title */
 }
@@ -261,7 +269,7 @@ footer p{
 .faq-section {
     color: white; /* Light text for contrast */
     text-align: center;
-    max-width: 100%; /* Keep width consistent with the Contact section */
+    max-width: 90%; /* Keep width consistent with the Contact section */
     margin: auto; /* Center the section */
     padding: 15px;
     background-color: #2a2d36; /* Consistent dark background */

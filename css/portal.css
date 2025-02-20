@@ -115,14 +115,14 @@
     height: 50vw;
     color: black;
 }
-.searchPortal table, th, tr, td{
+/*.searchPortal table, th, tr, td{
 
     /*border-collapse: collapse;
     border-radius: 20px;
     border: 1px solid darkgray;
     background-color: lightsteelblue;
-    color: black;*/
-}
+    color: black;
+}*/
 .searchPortal table{
     border-collapse: collapse;
     border-radius: 20px;
