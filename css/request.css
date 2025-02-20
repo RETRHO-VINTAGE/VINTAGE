@@ -1,0 +1,53 @@
+/*colorsss*/
+.coreOrange {color: #FA4616}
+.coreBlue {color: #0021A5}
+.bottlebrushRed {color: #D32737}
+.alachuaYellow {color: #F2A900}
+.gatorGreen {color: #22884c}
+.coreDarkBlue {color: #002657}
+.perennialPurple {color: #6A2A60}
+.coolGrey11 {color: #343741}
+.coolGrey3 {color: #C7C9C8}
+.warmGrey1 {color: #D8D4D7}
+
+.mainContainerRequest{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.requestTitle{
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+.requestTitle h1{
+    font-size: 48px;
+}
+
+.requestTargetInfo{
+    margin-bottom: 20px;
+}
+
+.targetForm1, .targetForm2{
+    background-color: #343741;
+    border-radius: 20px;
+    /*border: 3px solid #D32737;*/
+    width: 40%;
+    margin-bottom: 25px;
+    padding: 10px;
+}
+.targetFormTitle{
+    font-size: large;
+    font-weight: bold;
+    padding-bottom: 5px;
+}
+.targetButton{
+    background-color: #0021A5;
+    border: 2px solid #D32737;
+    border-radius: 20px;
+    font-family: "Exo 2";
+    color: white;
+    transition: 0.15s;
+}
+.targetButton:hover{
+    background-color: #002657;
+}
