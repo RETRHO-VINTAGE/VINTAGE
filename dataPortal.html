@@ -25,9 +25,32 @@
         <a href="contact.html" class="navbarPage">Contact US/FAQ</a>
         <a href="#" class="navbarPage">Login</a>
     </div>
-    <div class="pageTitle">Explore Data</div>
+    <!--header image-->
+    <div class="pageTitle">
+        <img src="images/m42.png" class="portalTitleImage">
+        <p class="portalTitleText">Explore Data</p>
+    </div>
+    <!--search portal- includes search bar and table-->
     <div class="searchPortal">
         <input type="text" placeholder="search objects...">
+        <div class="searchTypes">
+            <label>
+                <input type="radio" id="objName" name="filterOpt" value="objectName" checked="true">
+                Object Name
+            </label>
+            <label>
+                <input type="radio" id="objType" name="filterOpt" value="objectType" checked="false">
+                Object Type
+            </label>
+            <label>
+                <input type="radio" id="coords" name="filterOpt" value="objectCoords" checked="false">
+                Coordinates
+            </label>
+            <label>
+                <input type="checkbox" id="reduced" name="filterOpt" value="reduced">
+                Reduced Only
+            </label>
+        </div>
         <table id="dataTable">
             <tr class="tableHeader">
                 <th>Object Name</th>
@@ -38,6 +61,16 @@
                 <th>RA</th>
                 <th>DEC</th>
                 <th>Reduced</th>
+            </tr>
+            <tr class="tableData">
+                <td>sampleName</td>
+                <td>supernovae</td>
+                <td>DD-MM-YYYY 2am</td>
+                <td>BGR</td>
+                <td>200</td>
+                <td>12:33:44.22</td>
+                <td>05:22:89.22</td>
+                <td>No</td>
             </tr>
             <tr class="tableData">
                 <td>sampleName</td>
