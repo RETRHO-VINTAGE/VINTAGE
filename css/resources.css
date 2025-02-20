@@ -1,0 +1,50 @@
+/*colorsss*/
+.coreOrange {color: #FA4616}
+.coreBlue {color: #0021A5}
+.bottlebrushRed {color: #D32737}
+.alachuaYellow {color: #F2A900}
+.gatorGreen {color: #22884c}
+.coreDarkBlue {color: #002657}
+.perennialPurple {color: #6A2A60}
+.coolGrey11 {color: #343741}
+.coolGrey3 {color: #C7C9C8}
+.warmGrey1 {color: #D8D4D7}
+
+.resourcesTitle h1{
+    font-size: 48px;
+    margin-bottom: 40px;
+}
+
+.upperText{
+    margin-bottom: 25px;
+}
+.upperText a{
+    color: #D32737;
+}
+.upperText a:hover{
+    color: #F2A900;
+}
+
+.resourcesList{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-left: 5vw; /*for some reason it wont work unless define margin instead of centering element*/
+    width: 90%;
+}
+
+.resourceType h1{
+   text-align: left;
+   font-size: 30px;
+}
+.resourceType ul{
+    /*list-style-position: inside;*/
+    text-align: left;
+    list-style-type: none;
+    padding-left: 10px;
+    padding-top: 5px;
+}
+.resourceType li{
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
