@@ -236,7 +236,6 @@ footer p{
     opacity: 1;
 }
 
-
 .contact-section {
     color: black; /* Light text for contrast */
     text-align: center;
@@ -246,7 +245,6 @@ footer p{
 
 /* Contact Page Title */
 .contact-section h1 {
-    color: white;
     font-size: 48px; /* Large title */
     font-weight: 600;
     margin-top: 100px; /* Moves title up */
@@ -255,7 +253,6 @@ footer p{
 
 /* Contact Description */
 .contact-section p {
-    color: white;
     font-size: 22px; /* Slightly larger text */
     margin-top: 100px; /* Adds spacing to separate it from the title */
 }
@@ -285,7 +282,7 @@ footer p{
 .faq-section {
     color: white; /* Light text for contrast */
     text-align: center;
-    max-width: 90%; /* Keep width consistent with the Contact section */
+    max-width: 100%; /* Keep width consistent with the Contact section */
     margin: auto; /* Center the section */
     padding: 15px;
     background-color: #2a2d36; /* Consistent dark background */
