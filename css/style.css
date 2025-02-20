@@ -16,7 +16,6 @@
     padding: 0;
     box-sizing: border-box;
     /*background-color: black;*/
-   
 }
 
 body {
@@ -113,6 +112,28 @@ button {
         }
 
 
+.gallery-overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 5;
+    text-align: center;
+    pointer-events: none; /* Prevents interaction */
+}
+
+/* Text Styling */
+.gallery-overlay h1 {
+    font-size: 10rem; /* Large text */
+    color: white;
+    font-weight: 700;
+    font-family: "Exo 2", sans-serif;
+    letter-spacing: 10px;
+    margin: 0;
+    text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.7); /* Helps contrast */
+    padding: 0; /* Removes any unintended padding */
+    border: none; /* Ensures no border */
+}
 /* Footer styling */
 footer {
     text-align: center;
@@ -123,6 +144,7 @@ footer {
     bottom: 0;
     height: 100px;
     width: 100%;
+}
 
 /* Portfolio container */
 .portfolio-container {
@@ -188,6 +210,94 @@ footer {
     opacity: 1;
 }
 
+
 footer p{
     background-color: #002657;
+}
+
+.contact-section {
+    color: black; /* Light text for contrast */
+    text-align: center;
+    /*padding: 30px 0; /* Adds spacing around the section */
+    margin: 0;
+}
+
+/* Contact Page Title */
+.contact-section h1 {
+    font-size: 48px; /* Large title */
+    font-weight: 600;
+    margin-top: 100px; /* Moves title up */
+    margin-bottom: 0;
+}
+
+/* Contact Description */
+.contact-section p {
+    font-size: 22px; /* Slightly larger text */
+    margin-top: 100px; /* Adds spacing to separate it from the title */
+}
+
+/* Contact Info Styling */
+.contact-info a {
+    color: #1e90ff; /* Bright blue for contrast */
+    font-size: 22px;
+    font-weight: 500;
+    text-decoration: none;
+    display: block; /* Ensures proper spacing */
+    margin-top: -100px; /* Reduce space between text and email */
+    margin-bottom: 50px;
+}
+
+.contact-section a:hover {
+    text-decoration: underline;
+}
+
+/* Horizontal Rule Styling */
+.contact-section hr {
+    border: 0px solid #6a2a60; /* Subtle divider */
+    width: 100%;
+    margin: 0px;
+}
+
+.faq-section {
+    color: white; /* Light text for contrast */
+    text-align: center;
+    max-width: 100%; /* Keep width consistent with the Contact section */
+    margin: auto; /* Center the section */
+    padding: 15px;
+    background-color: #2a2d36; /* Consistent dark background */
+    border-radius: 50px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Subtle shadow */
+}
+
+.faq-section h2 {
+    font-size: 36px; /* Large title */
+    font-weight: 600;
+    margin-bottom: 20px;
+    background-color: #2a2d36;
+}
+
+.faq-item {
+    text-align: left;
+    /*background-color: #3a3d46; /* Slightly lighter background for contrast */
+    padding: 15px;
+    margin: 10px 50px;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+.faq-item p {
+    font-size: 20px;
+    line-height: 1.6;
+    color: #d1d1d1;
+}
+
+.faq-item strong {
+    color: #ff7c1e; /* Highlight question-answer labels */
+    font-size: 25px;
+}
+
+.faq-section hr {
+    border: 0px solid #6a2a60; /* Subtle divider */
+    width: 100%;
+    margin: 20px;
 }
