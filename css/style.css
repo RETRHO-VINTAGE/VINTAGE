@@ -101,6 +101,7 @@ button {
     font-size: 16px;
     cursor: pointer;
     margin-top: 20px;
+    font-family: "Exo 2", sans-serif;
 }
 
 .gallery {
