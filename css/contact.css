@@ -1,0 +1,174 @@
+/* Contact Page Title */
+.contact-faq-title h1 {
+    text-align: center;
+    font-size: 50px; /* Large title */
+    font-weight: 600;
+    margin-top: 100px; /* Moves title up */
+    margin-bottom: 100px
+}
+
+.contact-section {
+    /*color: white; /* Light text for contrast */
+    text-align: center;
+    /*padding: 30px 0; /* Adds spacing around the section */
+    /*margin: 0;*/
+}
+
+/* Contact Page Title */
+.contact-section h1 {
+    font-size: 48px; /* Large title */
+    font-weight: 600;
+    margin-top: 100px; /* Moves title up */
+    margin-bottom: 0;
+}
+
+/* Contact Description */
+.contact-section p {
+    font-size: 22px; /* Slightly larger text */
+    margin-top: 15px; /* Adds spacing to separate it from the title */
+}
+
+/* Contact Info Styling */
+.contact-info a {
+    color: #1e90ff; /* Bright blue for contrast */
+    font-size: 22px;
+    font-weight: 500;
+    text-decoration: none;
+    display: inline-block; /* Ensures proper spacing */
+    margin-top: -100px; /* Reduce space between text and email */
+    margin-bottom: 50px;
+}
+
+.contact-section a:hover {
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+/* Horizontal Rule Styling */
+.contact-section hr {
+    border: 0px solid #6a2a60; /* Subtle divider */
+    width: 100%;
+    margin: 0px;
+}
+
+.faq-section {
+    color: white; /* Light text for contrast */
+    text-align: center;
+    max-width: 100%; /* Keep width consistent with the Contact section */
+    margin: auto; /* Center the section */
+    padding: 15px;
+    background-color: #2a2d36; /* Consistent dark background */
+    border-radius: 50px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Subtle shadow */
+}
+
+.faq-section h2 {
+    font-size: 2.2rem; /* Large title */
+    font-weight: 600;
+    margin-bottom: 20px;
+    /*background-color: #2a2d36;*/
+}
+
+.faq-item {
+    text-align: left;
+    /*background-color: #3a3d46; /* Slightly lighter background for contrast */
+    padding: 15px;
+    margin: 20px 50px;
+    border-radius: 8px;
+    box-shadow: 0 0 6px rgba(189, 136, 136, 0.575);
+    transition: background-color 0.3s ease;
+}
+
+.faq-item:hover {
+    background-color: #3e4250; /* Slightly darker gray on hover */
+  }
+
+.faq-question {
+    all: unset;
+    cursor: pointer;
+    background: none;
+    /* background-color: brown; */
+    border: none;
+    outline: none;
+    margin-top: -5px;
+    color: #29bfed;
+    font-weight: 600;
+    border: none;
+    width: 100%;
+    font-size: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.faq-question .icon {
+    font-size: 2rem;
+}
+
+.faq-question.active .icon {
+    content: "-";
+}
+
+.faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.6s ease, padding 0.6s ease; /* Slower & smoother */
+    margin-left: 0;
+    font-size: 22px;
+    font-weight: 500;
+    color: #ff7c1e;
+    padding-top: 0;
+    padding-bottom: 0; /* Prevents sudden jumps */
+}
+
+.faq-answer.open {
+    max-height: 500px; /* Adjust if you have longer answers */
+    padding-top: 10px;
+    padding-bottom: 20px;
+}
+
+.faq-item p {
+    font-size: 20px;
+    line-height: 1.6;
+    color: #d1d1d1;
+}
+
+.faq-item a {
+    color: #1e90ff;
+}
+
+.faq-item a:hover {
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.faq-item strong {
+    color: #ff7c1e; /* Highlight question-answer labels */
+    font-size: 25px;
+}
+
+.faq-section hr {
+    border: 0px solid #6a2a60; /* Subtle divider */
+    width: 100%;
+    margin: 20px;
+}
+
+.question-section {
+    margin: auto;
+    padding: 30px;
+    text-align: center;
+}
+
+.question-section p {
+    /*background: yellow;*/
+    font-size: 24px;
+}
+
+#question-input {
+    width: 60%;
+    margin-top: 15px;
+    padding: 12px;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+}
