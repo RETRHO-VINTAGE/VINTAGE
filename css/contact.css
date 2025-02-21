@@ -1,8 +1,17 @@
+/* Contact Page Title */
+.contact-faq-title h1 {
+    text-align: center;
+    font-size: 50px; /* Large title */
+    font-weight: 600;
+    margin-top: 100px; /* Moves title up */
+    margin-bottom: 100px
+}
+
 .contact-section {
-    color: black; /* Light text for contrast */
+    /*color: white; /* Light text for contrast */
     text-align: center;
     /*padding: 30px 0; /* Adds spacing around the section */
-    margin: 0;
+    /*margin: 0;*/
 }
 
 /* Contact Page Title */
@@ -16,7 +25,7 @@
 /* Contact Description */
 .contact-section p {
     font-size: 22px; /* Slightly larger text */
-    margin-top: 100px; /* Adds spacing to separate it from the title */
+    margin-top: 15px; /* Adds spacing to separate it from the title */
 }
 
 /* Contact Info Styling */
@@ -25,7 +34,7 @@
     font-size: 22px;
     font-weight: 500;
     text-decoration: none;
-    display: block; /* Ensures proper spacing */
+    display: inline-block; /* Ensures proper spacing */
     margin-top: -100px; /* Reduce space between text and email */
     margin-bottom: 50px;
 }
@@ -66,7 +75,7 @@
     padding: 15px;
     margin: 20px 50px;
     border-radius: 8px;
-    box-shadow: 0 2px 6px rgba(189, 136, 136, 0.575);
+    box-shadow: 0 0 6px rgba(189, 136, 136, 0.575);
     transition: background-color 0.3s ease;
 }
 
