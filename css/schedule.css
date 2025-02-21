@@ -13,6 +13,9 @@
 .scheduleTitle{
     margin-bottom: 25px;
 }
+.scheduleTitle p{
+    margin-top: 20px;
+}
 .formButtons{
     display: flex;
     justify-content: space-around;
@@ -30,3 +33,17 @@
     background-color: #5A1A50;
 }
 
+
+.scheduleContainer{
+    background-color: #C7C9C8;
+    width: 90%;
+    height: 50vw;
+    margin: 0 auto 20px auto;
+}
+
+.scheduleGrid{
+    display: grid;
+    width: 90%;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    box-shadow: 0 0 5px #343741;
+}
