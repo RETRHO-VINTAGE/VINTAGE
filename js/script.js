@@ -1,3 +1,5 @@
+/*import { resources } from "../json/Resources List";*/
+
 console.log('RETRHO website loaded.');
 
 let index = 0;
@@ -13,12 +15,13 @@ function changeImage() {
 
 setInterval(changeImage, 3000);
 
+/*
 function changeText() {
     const welcomeText = document.querySelector('main p');
     if (welcomeText) {
         welcomeText.textContent = 'Welcome to the RETRHO website. Enjoy your stay!';
     }
-}
+}*/
 
 document.addEventListener("DOMContentLoaded", function () {
     const slideElements = document.querySelectorAll(".slide-in-left, .slide-in-right");
@@ -33,8 +36,8 @@ document.addEventListener("DOMContentLoaded", function () {
                 element.classList.add("show");
             }
         });
-    }
-
+     }
+  
     window.addEventListener("scroll", checkSlide);
     checkSlide(); // Run once in case elements are already in view
 });
