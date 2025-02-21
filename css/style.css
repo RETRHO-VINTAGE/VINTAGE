@@ -69,11 +69,14 @@ header {
     width: auto;
     min-width: 70px;
     margin: 10px 10px 10px 10px;
+    
 }
 .navbarLogo img.logo {
     height: 50px;
     width: auto;
     margin-right: 2px; 
+    border-radius: 50%;
+    border: 2px solid #FA4616;
 }
 .loginButton{
     background-color: #D32737;

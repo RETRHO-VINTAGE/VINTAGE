@@ -54,7 +54,7 @@
 .faq-section {
     color: white; /* Light text for contrast */
     text-align: center;
-    max-width: 100%; /* Keep width consistent with the Contact section */
+    max-width: 90%; /* Keep width consistent with the Contact section */
     margin: auto; /* Center the section */
     padding: 15px;
     background-color: #2a2d36; /* Consistent dark background */
