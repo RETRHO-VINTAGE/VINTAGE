@@ -1,0 +1,32 @@
+/*colorsss*/
+.coreOrange {color: #FA4616}
+.coreBlue {color: #0021A5}
+.bottlebrushRed {color: #D32737}
+.alachuaYellow {color: #F2A900}
+.gatorGreen {color: #22884c}
+.coreDarkBlue {color: #002657}
+.perennialPurple {color: #6A2A60}
+.coolGrey11 {color: #343741}
+.coolGrey3 {color: #C7C9C8}
+.warmGrey1 {color: #D8D4D7}
+
+.scheduleTitle{
+    margin-bottom: 25px;
+}
+.formButtons{
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 25px;
+}
+.formButtons button{
+    background-color: #6A2A60;
+    color: white;
+    border: 2px solid white;
+    border-radius: 20px;
+    width: 200px;
+    height: 50px;
+}
+.formButtons button:hover{
+    background-color: #5A1A50;
+}
+
