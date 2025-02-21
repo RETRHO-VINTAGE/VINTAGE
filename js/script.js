@@ -1,3 +1,5 @@
+/*import { resources } from "../json/Resources List";*/
+
 console.log('RETRHO website loaded.');
 
 let index = 0;
@@ -13,13 +15,14 @@ function changeImage() {
 
 setInterval(changeImage, 3000);
 
+/*
 function changeText() {
     const welcomeText = document.querySelector('main p');
     if (welcomeText) {
         welcomeText.textContent = 'Welcome to the RETRHO website. Enjoy your stay!';
     }
 }
-
+*/
 document.addEventListener('DOMContentLoaded', () => {
     const slideInObserver = new IntersectionObserver((entries, observer) => {
         entries.forEach(entry => {
