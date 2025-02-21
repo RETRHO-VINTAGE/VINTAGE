@@ -9,31 +9,67 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/telescope.css">
 </head>
 <body>
 
     <!-- Navigation Bar -->
-    <!--<div class="navbar">
-        <a href="index.html" class="navbarLogo">
-            <img src="images/RETRHOlogo_official.png" alt="Logo" class="logo">
-        </a>
-        <a href="telescope.html" class="navbarPage">Telescope</a>
-        <a href="portfolio.html" class="navbarPage">Portfolio</a>
-        <a href="dataPortal.html" class="navbarPage">Explore Data</a>
-        <a href="request_targets.html" class="navbarPage">Request Targets</a>
-        <a href="contact.html" class="navbarPage">Contact US/FAQ</a>
-        <a href="#" class="navbarPage">Login</a>
-    </div>-->
     <script id="replace_with_navbar" src="js/nav.js"></script>
 
-
-    <!-- Main Content -->
+    <!-- Telescope Page Title -->
     <main>
-        <section>
-            <h1>Telescope</h1>
-            <p>content.</p>
+        <section class="telescope-title">
+            <h1>Telescope at Rosemary Hill Observatory</h1>
         </section>
     </main>
 
+    <!-- Telescope Image -->
+    <div class="tele-image">
+        <img src="images/Telescope.jpg">
+    </div>
+
+    <!-- Telescope Information/Specs Section -->
+    <section class="tele-info-section">
+        <h2>Telescope and Camera Specifications</h2>
+        <div class="info">
+            <p>
+                The dome which houses the 14-inch Meade was originally home to an 18-inch Ritchey Chretien reflection. 
+                The telescope was replaced in recent years to enable more robust automated control.
+                The 14-inch Meade is equipped with an SBIG STF-8300 camera, plus a set of broadband and narrowband emission line filters.
+                Supported by a UF Technology Fee grant, we have recently been working to make this facility remotely operable from campus.
+                Upgrades for this effort included upgrades such as installation of electronics for dome, shutter, and lighting control, automated pointing using real-time GPU-based astrometric calibration, weather monitoring hardware and automated shutdown in inclement conditions, and on-the-fly data reduction of the CCD imaging.
+            </p>
+            <p>
+                
+            </p>
+        </div>
+    </section>
+
+    <!-- Location Section -->
+    <section class="location-container">
+        <!-- RHO Location Section -->
+        <div class="location-info">
+            <div class="lattitude-longitude">
+                <p>Decimal Latitude: 29.4011°, Decimal Longitude: -82.5860°, Elevation: XXX m</p>
+                <p>Latitude: 29° 24' 0.5688", Longitude: -82° 35' 10.3158"</p>
+            </div>
+        </div>
+    
+        <!-- Google Maps Section -->
+        <div class="google-maps-section">
+            <div class="googleFormContainer">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d27806.632558638157!2d-82.585148!3d29.404556000000003!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88e8ed63f37fe6e5%3A0xa8fedde1fef7360b!2sRosemary%20Hill%20Observatory!5e0!3m2!1sen!2sus!4v1740171148915!5m2!1sen!2sus" 
+                    allowfullscreen="" 
+                    loading="lazy" 
+                    referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>[insert contact info here]</p>
+        <p>&copy; 2025 RETRHO. All rights reserved.</p>
+    </footer>
 </body>
 </html>
