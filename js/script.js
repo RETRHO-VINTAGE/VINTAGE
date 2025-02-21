@@ -20,19 +20,21 @@ function changeText() {
     }
 }
 
-document.addEventListener('DOMContentLoaded', () => {
-    const slideInObserver = new IntersectionObserver((entries, observer) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('show');
-                observer.unobserve(entry.target);
+document.addEventListener("DOMContentLoaded", function () {
+    const slideElements = document.querySelectorAll(".slide-in-left, .slide-in-right");
+
+    function checkSlide() {
+        const triggerBottom = window.innerHeight * 0.75;
+
+        slideElements.forEach((element) => {
+            const boxTop = element.getBoundingClientRect().top;
+
+            if (boxTop < triggerBottom) {
+                element.classList.add("show");
             }
         });
-    }, {
-        threshold: 0.5 
-    });
-    const slideElements = document.querySelectorAll('.slide-in-left, .slide-in-right');
-    slideElements.forEach(element => {
-        slideInObserver.observe(element); 
-    });
+    }
+
+    window.addEventListener("scroll", checkSlide);
+    checkSlide(); // Run once in case elements are already in view
 });

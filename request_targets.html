@@ -14,19 +14,7 @@
 <body>
 
     <!-- Navigation Bar -->
-    <!--<div class="navbar">
-        <a href="index.html" class="navbarLogo">
-            <img src="images/RETRHOlogo_official.png" alt="Logo" class="logo">
-        </a>
-        <a href="telescope.html" class="navbarPage">Telescope</a>
-        <a href="portfolio.html" class="navbarPage">Portfolio</a>
-        <a href="dataPortal.html" class="navbarPage">Explore Data</a>
-        <a href="request_targets.html" class="navbarPage">Request Targets</a>
-        <a href="contact.html" class="navbarPage">Contact US/FAQ</a>
-        <a href="#" class="navbarPage">Login</a>
-    </div>-->
     <script id="replace_with_navbar" src="js/nav.js"></script>
-
 
     <!-- Main Content -->
     <div class="mainContainerRequest">
@@ -34,18 +22,18 @@
             <h1>Request Targets</h1>
         </div>
         <div class="requestTargetInfo">
-            <p>insert info text here</p>
+            <p>Fill out the form below to submit your request.</p>
         </div>
-        <div class="targetForm1">
-            <p class="targetFormTitle">Target Form</p>
-            <p>info about form</p>
-            <button class="targetButton">Target Submission Form</button>
+
+        <!-- Embedded Google Form -->
+        <div class="googleFormContainer">
+            <iframe src="https://docs.google.com/forms/d/e/1FAIpQLScOPwXjnpeUWdgHKNqaiBrYX4bQBU-e2mXjTeXdfMrTU0xKVQ/viewform?embedded=true" width="800px" height="800px" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
         </div>
-        <div class="targetForm2">
-            <p class="targetFormTitle">TOI Form</p>
-            <p>info about form</p>
-            <button class="targetButton">TOI Submission Form</button>
-        </div>
+    </div>
+    <div class="targetForm2">
+        <p class="targetFormTitle">TOI Form</p>
+        <p>info about form</p>
+        <button class="targetButton">TOI Submission Form</button>
     </div>
 
 </body>
