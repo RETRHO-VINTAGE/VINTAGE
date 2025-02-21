@@ -10,47 +10,55 @@
 .coolGrey3 {color: #C7C9C8}
 .warmGrey1 {color: #D8D4D7}
 
-.resourcesTitle h1{
-    font-size: 48px;
-    margin-bottom: 40px;
-}
-
-.upperText{
-    margin-bottom: 25px;
-}
-.upperText a{
-    color: #D32737;
-}
-.upperText a:hover{
-    color: #F2A900;
-}
-
-.resourcesList{
+.mainContainerRequest {
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    margin-left: 5vw; /*for some reason it wont work unless define margin instead of centering element*/
-    width: 90%;
+    align-items: center;
+    justify-content: center; /* Vertically centers the content */
+    min-height: 100vh; /* Ensures the container takes the full height of the viewport */
+    text-align: center; /* Optional: centers text inside the container */
 }
 
-.resourceType h1{
-   text-align: left;
-   font-size: 30px;
+.requestTitle {
+    margin-top: 20px;
+    margin-bottom: 20px;
 }
-.resourceType ul{
-    /*list-style-position: inside;*/
-    text-align: left;
-    list-style-type: none;
-    padding-left: 10px;
-    padding-top: 5px;
+
+.requestTitle h1 {
+    font-size: 48px;
 }
-.resourceType li{
-    padding-top: 5px;
+
+.requestTargetInfo {
+    margin-bottom: 20px;
+}
+
+.targetForm1, .targetForm2 {
+    background-color: #343741;
+    border-radius: 20px;
+    /*border: 3px solid #D32737;*/
+    width: 40%;
+    margin-bottom: 25px;
+    padding: 10px;
+    display: flex; /* Added to allow centering of content if needed */
+    justify-content: center; /* Centers the form content horizontally */
+    align-items: center; /* Centers the form content vertically */
+}
+
+.targetFormTitle {
+    font-size: large;
+    font-weight: bold;
     padding-bottom: 5px;
 }
-.resourceType a{
-    color: #D32737;
+
+.targetButton {
+    background-color: #0021A5;
+    border: 2px solid #D32737;
+    border-radius: 20px;
+    font-family: "Exo 2";
+    color: white;
+    transition: 0.15s;
 }
-.resourceType a:hover{
-    color: #F2A900;
+
+.targetButton:hover {
+    background-color: #002657;
 }
