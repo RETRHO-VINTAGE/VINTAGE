@@ -48,3 +48,9 @@
     padding-top: 5px;
     padding-bottom: 5px;
 }
+.resourceType a{
+    color: #D32737;
+}
+.resourceType a:hover{
+    color: #F2A900;
+}
