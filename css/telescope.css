@@ -35,15 +35,26 @@
     padding-bottom: 30px;
 }
 
+.location-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 20px;
+    max-width: 1000px;
+    margin: 40px auto;
+    padding: 0 20px;
+    flex-wrap: wrap;
+}
+
+/* Location Info */
 .location-info {
     background-color: #3a3f47;
-    color: white;
     padding: 20px;
-    margin: 30px auto;
-    max-width: 800px;
+    flex: 1 1 45%;
     border-radius: 10px;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
     text-align: center;
+    margin: 0; 
 }
 
 .location-info .lattitude-longitude p {
@@ -54,10 +65,11 @@
 
 /* Google Maps Section */
 .google-maps-section {
+    flex: 1 1 50%;
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 40px 0;
+    margin: 0;
 }
 
 .googleFormContainer iframe {
