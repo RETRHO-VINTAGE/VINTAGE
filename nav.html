@@ -19,6 +19,21 @@
         <a href="observingResources.html" class="navbarPage">Observation Resources</a>
         <a href="resources.html" class="navbarPage">Resources</a>
         <!--change to profile pic or smth when logged in-->
-        <button class="loginButton">Login</button>
+        <!-- Existing Login Button -->
+        <button class="loginButton" onclick="openLoginModal()">Login</button>
+
+        <!-- Login Modal -->
+        <div id="loginModal" class="modal">
+            <div class="modal-content">
+                <span class="close-button" onclick="closeLoginModal()">&times;</span>
+                <h2 style="font-weight: bold; font-size: 1.5em; color: black; margin-bottom: 5px;">Login to RETRHO</h2>
+                <form>
+                    <input type="text" placeholder="Username" required>
+                    <input type="password" placeholder="Password" required>
+                    <button type="submit">Login</button>
+                </form>
+            </div>
+        </div>
+
     </div>
 </body>
