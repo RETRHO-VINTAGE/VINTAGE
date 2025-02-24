@@ -24,7 +24,8 @@
 .formButtons button{
     background-color: #6A2A60;
     color: white;
-    border: 2px solid white;
+    /*border: 2px solid white;*/
+    border: none;
     border-radius: 20px;
     width: 200px;
     height: 50px;
@@ -35,15 +36,52 @@
 
 
 .scheduleContainer{
-    background-color: #C7C9C8;
+    /*background-color: #C7C9C8;*/
     width: 90%;
-    height: 50vw;
+    height: 60vw;
     margin: 0 auto 20px auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
 }
 
 .scheduleGrid{
     display: grid;
-    width: 90%;
+    background-color: #C7C9C8;
+    border-radius: 10px;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 60px 1fr 1fr 1fr 1fr 1fr;
+    width: 90%;
+    height: 95%;
+    box-shadow: 0 0 10px #D32737;
+    justify-content: center;
+    color: black;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+.day{
+    background-color: #C7C9C8;
     box-shadow: 0 0 5px #343741;
+    margin: 2%;
+    margin-top: 10px;
+    height: 50px;
+    text-align: center;
+    vertical-align: middle;
+    font-size: large;
+    font-weight: bold;
+    border-radius: 10px;
+}
+.day p{
+    position: relative;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+}
+.dayPanel{
+    background-color: #C7C9C8;
+    box-shadow: 0 0 5px #343741;
+    margin: 5px;
+    vertical-align: middle;
+    border-radius: 10px;
 }
