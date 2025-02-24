@@ -13,6 +13,10 @@
     margin: 20px 0;
 }
 
+.tele-image img {
+    border-radius: 20px;
+}
+
 .tele-info-section {
     background-color: #3a3f47;
     border-radius: 10px;
