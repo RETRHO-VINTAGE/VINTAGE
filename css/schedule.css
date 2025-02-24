@@ -48,8 +48,8 @@
 
 .scheduleGrid{
     display: grid;
-    background-color: #343741;
-    border-radius: 20px;
+    background-color: #C7C9C8;
+    border-radius: 10px;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
     grid-template-rows: 60px 1fr 1fr 1fr 1fr 1fr;
     width: 90%;
@@ -57,18 +57,20 @@
     box-shadow: 0 0 10px #D32737;
     justify-content: center;
     color: black;
+    padding-left: 5px;
+    padding-right: 5px;
 }
 .day{
     background-color: #C7C9C8;
-    box-shadow: 0 0 5px #FA4616;
-    margin: 5px;
+    box-shadow: 0 0 5px #343741;
+    margin: 2%;
     margin-top: 10px;
     height: 50px;
     text-align: center;
     vertical-align: middle;
     font-size: large;
     font-weight: bold;
-    border-radius: 20px;
+    border-radius: 10px;
 }
 .day p{
     position: relative;
