@@ -1,0 +1,78 @@
+/* Telescope Page Title */
+.telescope-title h1 {
+    text-align: center;
+    font-size: 50px;
+    font-weight: 600;
+    margin-top: 100px;
+    margin-bottom: 50px;
+}
+
+.tele-image {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+}
+
+.tele-info-section {
+    background-color: #3a3f47;
+    border-radius: 10px;
+    padding: 20px;
+    margin: auto;
+    max-width: 1200px;
+}
+
+.tele-info-section h2 {
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+    border-bottom: 2px solid #4e89ae;
+    display: inline-block;
+    padding-bottom: 5px;
+}
+
+.tele-info-section .info p {
+    font-size: 1.1rem;
+    text-align: left;
+    padding-bottom: 30px;
+}
+
+.location-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 20px;
+    max-width: 1000px;
+    margin: 40px auto;
+    padding: 0 20px;
+    flex-wrap: wrap;
+}
+
+/* Location Info */
+.location-info {
+    background-color: #3a3f47;
+    padding: 20px;
+    flex: 1 1 45%;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
+    text-align: center;
+    margin: 0; 
+}
+
+.location-info .lattitude-longitude p {
+    font-size: 1.1rem;
+    margin: 10px 0;
+    line-height: 1.5;
+}
+
+/* Google Maps Section */
+.google-maps-section {
+    flex: 1 1 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+}
+
+.googleFormContainer iframe {
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
+}

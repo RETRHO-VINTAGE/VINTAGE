@@ -51,7 +51,7 @@ function createRsrcList(rsrcJson, parentDiv){
             }
             if(rsrc.Display == "TRUE"){
                 //make li element
-                const li = document.createElement('li');
+                // const li = document.createElement('li');
                 innerHTML += "<li><a target=\"_blank\" href=\"" + rsrc["Resource Link"] + "\">" + rsrc["Resource Name"] + "</a></li>";
             }
         });

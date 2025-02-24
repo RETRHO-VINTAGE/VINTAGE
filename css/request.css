@@ -32,18 +32,25 @@
     margin-bottom: 20px;
 }
 
-.googleFormContainer {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 10px; 
+.google-form-container {
+    max-width: 800px;  
+    margin: 0 auto;
+    padding: 20px;
+    background: #343741; 
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden; 
+}
+
+.google-form-container iframe {
+    border-radius: 8px; 
+    background: #343741; 
 }
 
 .targetForm2 {
     background-color: #343741;
     border-radius: 20px;
-    width: 40%;
+    width: 45%;
     padding: 10px;
     display: flex;
     flex-direction: column; 

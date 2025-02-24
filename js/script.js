@@ -41,3 +41,6 @@ document.addEventListener("DOMContentLoaded", function () {
     window.addEventListener("scroll", checkSlide);
     checkSlide(); // Run once in case elements are already in view
 });
+
+
+
