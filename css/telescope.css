@@ -13,6 +13,10 @@
     margin: 20px 0;
 }
 
+.tele-image img {
+    border-radius: 20px;
+}
+
 .tele-info-section {
     background-color: #3a3f47;
     border-radius: 10px;
@@ -29,17 +33,32 @@
     padding-bottom: 5px;
 }
 
+.tele-info-section .info {
+    margin-bottom: -30px;
+}
+
 .tele-info-section .info p {
     font-size: 1.1rem;
     text-align: left;
     padding-bottom: 30px;
 }
 
+.tele-info-section .info a {
+    color: #1e90ff;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.tele-info-section .info a:hover {
+    text-decoration: underline;
+    cursor: pointer;
+}
+
 .location-container {
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
-    gap: 20px;
+    gap: 30px;
     max-width: 1000px;
     margin: 40px auto;
     padding: 0 20px;
@@ -54,7 +73,7 @@
     border-radius: 10px;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
     text-align: center;
-    margin: 0; 
+    margin-top: 50px;
 }
 
 .location-info .lattitude-longitude p {
