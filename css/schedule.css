@@ -37,7 +37,7 @@
 
 .scheduleContainer{
     /*background-color: #C7C9C8;*/
-    width: 90%;
+    width: 95%;
     height: 60vw;
     margin: 0 auto 20px auto;
     display: flex;
@@ -52,7 +52,7 @@
     border-radius: 10px;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
     grid-template-rows: 60px 1fr 1fr 1fr 1fr 1fr;
-    width: 90%;
+    width: 95%;
     height: 95%;
     box-shadow: 0 0 10px #D32737;
     justify-content: center;
