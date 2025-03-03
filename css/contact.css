@@ -1,41 +1,33 @@
 /* Contact Page Title */
 .contact-faq-title h1 {
     text-align: center;
-    font-size: 50px; /* Large title */
+    font-size: 50px;
     font-weight: 600;
-    margin-top: 100px; /* Moves title up */
+    margin-top: 100px;
     margin-bottom: 100px
 }
 
-.contact-section {
-    /*color: white; /* Light text for contrast */
-    text-align: center;
-    /*padding: 30px 0; /* Adds spacing around the section */
-    /*margin: 0;*/
-}
 
-/* Contact Page Title */
+/* Contact Section */
 .contact-section h1 {
-    font-size: 48px; /* Large title */
+    font-size: 48px;
     font-weight: 600;
-    margin-top: 100px; /* Moves title up */
+    margin-top: 100px;
     margin-bottom: 0;
 }
 
-/* Contact Description */
 .contact-section p {
-    font-size: 22px; /* Slightly larger text */
-    margin-top: 15px; /* Adds spacing to separate it from the title */
+    font-size: 22px;
+    margin-top: 15px;
 }
 
-/* Contact Info Styling */
-.contact-info a {
-    color: #1e90ff; /* Bright blue for contrast */
+.contact-section .contact-info a {
+    color: #1e90ff;
     font-size: 22px;
     font-weight: 500;
     text-decoration: none;
-    display: inline-block; /* Ensures proper spacing */
-    margin-top: -100px; /* Reduce space between text and email */
+    display: inline-block;
+    margin-top: -100px;
     margin-bottom: 50px;
 }
 
@@ -44,34 +36,32 @@
     cursor: pointer;
 }
 
-/* Horizontal Rule Styling */
 .contact-section hr {
-    border: 0px solid #6a2a60; /* Subtle divider */
+    border: 0px solid #6a2a60;
     width: 100%;
     margin: 0px;
 }
 
+/* FAQ Section */
 .faq-section {
-    color: white; /* Light text for contrast */
+    color: white;
     text-align: center;
-    max-width: 90%; /* Keep width consistent with the Contact section */
-    margin: auto; /* Center the section */
+    max-width: 90%;
+    margin: auto;
     padding: 15px;
-    background-color: #2a2d36; /* Consistent dark background */
+    background-color: #2a2d36;
     border-radius: 50px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Subtle shadow */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
 }
 
 .faq-section h2 {
-    font-size: 2.2rem; /* Large title */
+    font-size: 2.2rem;
     font-weight: 600;
     margin-bottom: 20px;
-    /*background-color: #2a2d36;*/
 }
 
 .faq-item {
     text-align: left;
-    /*background-color: #3a3d46; /* Slightly lighter background for contrast */
     padding: 15px;
     margin: 20px 50px;
     border-radius: 8px;
@@ -80,14 +70,13 @@
 }
 
 .faq-item:hover {
-    background-color: #3e4250; /* Slightly darker gray on hover */
+    background-color: #3e4250;
   }
 
 .faq-question {
     all: unset;
     cursor: pointer;
     background: none;
-    /* background-color: brown; */
     border: none;
     outline: none;
     margin-top: -5px;
@@ -126,7 +115,6 @@
     padding-bottom: 20px;
 }
 
-/* Improve readability of lists */
 .faq-answer ol, 
 .faq-answer ul {
     margin: 15px 0;
@@ -134,10 +122,9 @@
 }
 
 .faq-answer li {
-    margin-bottom: 10px; /* Adds space between list items */
+    margin-bottom: 10px;
 }
 
-/* Improve sub-sections within answers */
 .faq-answer h4 {
     font-size: 22px;
     font-weight: 600;
@@ -145,7 +132,6 @@
     color: #C7C9C8;
 }
 
-/* Improve link appearance */
 .faq-answer a {
     color: #1e90ff;
     font-weight: 500;
@@ -156,7 +142,6 @@
     text-decoration: underline;
 }
 
-/* Better styling for strong elements */
 .faq-answer span {
     color: #D32737;
     font-size: 26px;
@@ -179,26 +164,23 @@
 }
 
 .faq-item strong {
-    color: #ff7c1e; /* Highlight question-answer labels */
+    color: #ff7c1e;
     font-size: 25px;
 }
 
 .faq-section hr {
-    border: 0px solid #6a2a60; /* Subtle divider */
+    border: 0px solid #6a2a60;
     width: 100%;
     margin: 20px;
 }
 
+/* Anonymous Question Box */
 .question-section {
     margin: auto;
     padding: 30px;
     text-align: center;
 }
 
-.question-section p {
-    /*background: yellow;*/
-    font-size: 24px;
-}
 
 #question-input {
     width: 60%;
