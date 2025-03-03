@@ -112,19 +112,55 @@
 .faq-answer {
     max-height: 0;
     overflow: hidden;
-    transition: max-height 0.6s ease, padding 0.6s ease; /* Slower & smoother */
+    transition: max-height 0.6s ease, padding 0.6s ease;
     margin-left: 0;
     font-size: 22px;
     font-weight: 500;
     color: #ff7c1e;
-    padding-top: 0;
-    padding-bottom: 0; /* Prevents sudden jumps */
+    /* padding: 0 15px; */
 }
 
 .faq-answer.open {
-    max-height: 500px; /* Adjust if you have longer answers */
+    max-height: 1000px;
     padding-top: 10px;
     padding-bottom: 20px;
+}
+
+/* Improve readability of lists */
+.faq-answer ol, 
+.faq-answer ul {
+    margin: 15px 0;
+    padding-left: 30px;
+}
+
+.faq-answer li {
+    margin-bottom: 10px; /* Adds space between list items */
+}
+
+/* Improve sub-sections within answers */
+.faq-answer h4 {
+    font-size: 22px;
+    font-weight: 600;
+    margin-top: 50px;
+    color: #d1d1d1;
+}
+
+/* Improve link appearance */
+.faq-answer a {
+    color: #1e90ff;
+    font-weight: 500;
+    text-decoration: none;
+}
+
+.faq-answer a:hover {
+    text-decoration: underline;
+}
+
+/* Better styling for strong elements */
+.faq-answer span {
+    color: #D32737;
+    font-size: 26px;
+    font-weight: bold;
 }
 
 .faq-item p {
@@ -173,7 +209,7 @@
     font-size: 16px;
 }
 .google-form-container {
-    max-width: 94%;  
+    max-width: 45%;  
     margin: 0 auto;
     padding: 10px;
     background: #343741; 
