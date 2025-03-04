@@ -4,35 +4,35 @@
 
 // const url = `https://sheets.googleapis.com/v4/spreadsheets/${sheetID}/values/${range}?key=${apiKey}`;
 
-// /* function fetchPortfolioData() {
-//     fetch(url)
-//         .then(response => response.json())
-//         .then(data => {
-//             const values = data.values; 
-//             let portfolioHTML = "";
-//             values.forEach((row, index) => {
-//                 let question = row[0];
-//                 let answer = row[1];
-//                 let link = row[2];
-//                 let visible = row[3];
+/* function fetchPortfolioData() {
+    fetch(url)
+        .then(response => response.json())
+        .then(data => {
+            const values = data.values; 
+            let portfolioHTML = "";
+            values.forEach((row, index) => {
+                let question = row[0];
+                let answer = row[1];
+                let link = row[2];
+                let visible = row[3];
 
-//                 portfolioHTML += `
-//                     <div class="faq-item">
-//                         <button type="button" class = "faq-question">
-//                             ${question}<span class="icon">+</span>
-//                         </button>
-//                         <div class="faq-answer">
-//                             ${answer}
-//                         </div>
-//                     </div>
-//                 `;
-//             });
+                portfolioHTML += `
+                    <div class="faq-item">
+                        <button type="button" class = "faq-question">
+                            ${question}<span class="icon">+</span>
+                        </button>
+                        <div class="faq-answer">
+                            ${answer}
+                        </div>
+                    </div>
+                `;
+            });
 
-//             document.querySelector(".portfolio-container").innerHTML = portfolioHTML;
-//             checkSlide();
-//         })
-//         .catch(error => console.error("Error fetching data:", error));
-// } */
+            document.querySelector(".portfolio-container").innerHTML = portfolioHTML;
+            checkSlide();
+        })
+        .catch(error => console.error("Error fetching data:", error));
+} */
 
 
 /* document.addEventListener('DOMContentLoaded', () => {
