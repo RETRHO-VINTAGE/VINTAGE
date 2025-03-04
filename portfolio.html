@@ -12,17 +12,6 @@
 </head>
 <body>
     <!-- Navigation Bar -->
-    <!--<div class="navbar">
-        <a href="index.html" class="navbarLogo">
-            <img src="images/RETRHOlogo_official.png" alt="Logo" class="logo">
-        </a>
-        <a href="telescope.html" class="navbarPage">Telescope</a>
-        <a href="portfolio.html" class="navbarPage">Portfolio</a>
-        <a href="dataPortal.html" class="navbarPage">Explore Data</a>
-        <a href="request_targets.html" class="navbarPage">Request Targets</a>
-        <a href="contact.html" class="navbarPage">Contact US/FAQ</a>
-        <a href="#" class="navbarPage">Login</a>
-    </div>-->
     <script id="replace_with_navbar" src="js/nav.js"></script>
     
     <!-- Main Content -->
@@ -30,44 +19,15 @@
         <section>
             <h1>Portfolio</h1>
             <div class="portfolio-container">
-                <div class="slide-in-left">
-                    <h2>Supernova ___</h2>
-                    <img src="images/RETRHOlogo_official.png" alt="Supernova plot">
-                    <p>Information describing how plot was achieved</p>
-                </div>
-    
-                <div class="slide-in-right">
-                    <h2>Color Image of ___</h2>
-                    <img src="images/Telescope.jpg" alt="Color Image">
-                    <p>Information describing how plot was achieved</p>
-                </div>
-                <div class="slide-in-left">
-                    <h2>Supernova ___</h2>
-                    <img src="images/RETRHOlogo_official.png" alt="Supernova plot">
-                    <p>Information describing how plot was achieved</p>
-                </div>
-    
-                <div class="slide-in-right">
-                    <h2>Color Image of ___</h2>
-                    <img src="images/Telescope.jpg" alt="Color Image">
-                    <p>Information describing how plot was achieved</p>
-                </div>
-                <div class="slide-in-left">
-                    <h2>Supernova ___</h2>
-                    <img src="images/RETRHOlogo_official.png" alt="Supernova plot">
-                    <p>Information describing how plot was achieved</p>
-                </div>
-    
-                <div class="slide-in-right">
-                    <h2>Color Image of ___</h2>
-                    <img src="images/Telescope.jpg" alt="Color Image">
-                    <p>Information describing how plot was achieved</p>
-                </div>
+                <!-- Portfolio items will be updated dynamically from Google Sheets -->
             </div>
         </section>
     </main>
-        
-    <script src="js/script.js"></script>
+    
+    <!-- Include data.js first so it fetches Google Sheets data -->
+    <script src="js/data.js"></script>
+    <!--<script src="js/script.js"></script>-->
+
     <footer>Contact Info Here</footer>
 </body>
 </html>
