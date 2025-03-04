@@ -1,14 +1,14 @@
-/*colorsss*/
-.coreOrange {color: #FA4616}
-.coreBlue {color: #0021A5}
-.bottlebrushRed {color: #D32737}
-.alachuaYellow {color: #F2A900}
-.gatorGreen {color: #22884c}
-.coreDarkBlue {color: #002657}
-.perennialPurple {color: #6A2A60}
-.coolGrey11 {color: #343741}
-.coolGrey3 {color: #C7C9C8}
-.warmGrey1 {color: #D8D4D7}
+/* Colors */
+.coreOrange {color: #FA4616;}
+.coreBlue {color: #0021A5;}
+.bottlebrushRed {color: #D32737;}
+.alachuaYellow {color: #F2A900;}
+.gatorGreen {color: #22884c;}
+.coreDarkBlue {color: #002657;}
+.perennialPurple {color: #6A2A60;}
+.coolGrey11 {color: #343741;}
+.coolGrey3 {color: #C7C9C8;}
+.warmGrey1 {color: #D8D4D7;}
 
 .mainContainerRequest {
     display: flex;
@@ -25,55 +25,68 @@
 }
 
 .requestTitle h1 {
-    font-size: 48px;
+    font-size: 52px;
+    font-weight: bold;
+    color: white;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
 }
 
 .requestTargetInfo {
+    font-size: 18px;
+    color: #C7C9C8;
     margin-bottom: 20px;
 }
 
-.google-form-container {
-    max-width: 800px;  
-    margin: 0 auto;
-    padding: 20px;
-    background: #343741; 
-    border-radius: 10px;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-    overflow: hidden; 
-}
-
-.google-form-container iframe {
-    border-radius: 8px; 
-    background: #343741; 
-}
-
+/* Request Form Container */
 .targetForm2 {
     background-color: #343741;
-    border-radius: 20px;
-    width: 45%;
-    padding: 10px;
+    border-radius: 25px;
+    width: 40%;
+    padding: 25px;
     display: flex;
-    flex-direction: column; 
-    justify-content: center;
-    margin: 0 auto; 
-    margin-top: 10px; 
+    flex-direction: column;
+    align-items: center;
+    margin: 0 auto;
+    margin-top: 25px;
+    gap: 15px; /* Adds spacing between the buttons */
+    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.3); /* Subtle shadow */
+    border: 3px solid #FA4616; /* Adds a subtle border */
 }
 
 .targetFormTitle {
-    font-size: large;
+    font-size: 24px;
     font-weight: bold;
-    padding-bottom: 5px;
+    color: white;
+    text-transform: uppercase;
 }
 
+.targetFormSubtitle {
+    font-size: 18px;
+    font-weight: 500;
+    color: #C7C9C8;
+    margin-bottom: 10px;
+}
+
+/* Buttons */
 .targetButton {
-    background-color: #0021A5;
+    background-color: #6A2A60;
     border: 2px solid #D32737;
-    border-radius: 20px;
-    font-family: "Exo 2";
+    border-radius: 25px;
+    font-family: "Exo 2", sans-serif;
     color: white;
-    transition: 0.15s;
+    font-size: 18px;
+    font-weight: bold;
+    padding: 15px 25px;
+    width: 85%; /* Makes both buttons equal in width */
+    text-align: center;
+    transition: 0.3s ease-in-out;
+    cursor: pointer;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
 }
 
 .targetButton:hover {
-    background-color: #002657;
+    background-color: #FA4616;
+    border-color: white;
+    transform: scale(1.05);
+    box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.3);
 }

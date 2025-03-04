@@ -23,24 +23,24 @@ function changeText() {
     }
 }*/
 
-document.addEventListener("DOMContentLoaded", function () {
-    const slideElements = document.querySelectorAll(".slide-in-left, .slide-in-right");
+// document.addEventListener("DOMContentLoaded", function () {
+//     const slideElements = document.querySelectorAll(".slide-in-left, .slide-in-right");
 
-    function checkSlide() {
-        const triggerBottom = window.innerHeight * 0.75;
+//     function checkSlide() {
+//         const triggerBottom = window.innerHeight * 0.75;
 
-        slideElements.forEach((element) => {
-            const boxTop = element.getBoundingClientRect().top;
+//         slideElements.forEach((element) => {
+//             const boxTop = element.getBoundingClientRect().top;
 
-            if (boxTop < triggerBottom) {
-                element.classList.add("show");
-            }
-        });
-     }
+//             if (boxTop < triggerBottom) {
+//                 element.classList.add("show");
+//             }
+//         });
+//      }
   
-    window.addEventListener("scroll", checkSlide);
-    checkSlide(); // Run once in case elements are already in view
-});
+//     window.addEventListener("scroll", checkSlide);
+//     checkSlide(); // Run once in case elements are already in view
+// });
 
 
 
