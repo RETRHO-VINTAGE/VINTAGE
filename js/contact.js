@@ -35,27 +35,28 @@
 // } */
 
 
+/* document.addEventListener('DOMContentLoaded', () => {
+    const faqQuestions = document.querySelectorAll('.faq-question');
+    faqQuestions.forEach(question => {
+        question.addEventListener('click', ()=> {
+            question.classList.toggle('active');
+            const answer = question.nextElementSibling;
 
-// document.addEventListener('DOMContentLoaded', () => {
-//     const faqQuestions = document.querySelectorAll('.faq-question');
-//     faqQuestions.forEach(question => {
-//         question.addEventListener('click', ()=> {
-//             question.classList.toggle('active');
-//             const answer = question.nextElementSibling;
+            answer.classList.toggle('open'); // Animate open/close
 
-//             answer.classList.toggle('open'); // Animate open/close
+            const icon = question.querySelector('.icon');
+            if (icon) {
+                icon.textContent = icon.textContent === '+' ? '-' : '+';
+            }
+        });
+    });
+}); */
 
-//             const icon = question.querySelector('.icon');
-//             if (icon) {
-//                 icon.textContent = icon.textContent === '+' ? '-' : '+';
-//             }
-//         });
-//     });
-// });
+
 const sheetID = "1Pclf-UY6DQxH4xT64vAifZOGBdu_qr78PpkdI6sdeLs";
 const apiKey = "AIzaSyASQPliHBF4eIKF1DjCiGYfGzw6lp10kQc";
 const sheetName = "Sheet1";
-const range = `${sheetName}!A2:E`; // Ensure a large enough range to get all rows
+const range = `${sheetName}!A2:Z`; // Ensure a large enough range to get all rows
 
 const url = `https://sheets.googleapis.com/v4/spreadsheets/${sheetID}/values/${range}?key=${apiKey}`;
 
