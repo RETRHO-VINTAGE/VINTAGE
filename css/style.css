@@ -140,19 +140,18 @@ button {
     transform: translate(-50%, -50%);
     z-index: 5;
     text-align: center;
-    pointer-events: none; /* Prevents interaction */
+    pointer-events: none; 
 }
 
-/* Text Styling */
 .gallery-overlay h1 {
-    font-size: 10rem; /* Large text */
+    font-size: 10rem;
     color: white;
     font-weight: 700;
     font-family: "Exo 2", sans-serif;
     letter-spacing: 10px;
     margin: 0;
-    text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.7); /* Helps contrast */
-    padding: 0; /* Removes any unintended padding */
+    text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.7);
+    padding: 0; 
     border: none; /* Ensures no border */
 }
 .gallery-overlay p{

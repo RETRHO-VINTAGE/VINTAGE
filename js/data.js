@@ -46,8 +46,6 @@ function checkSlide() {
 
 document.addEventListener("DOMContentLoaded", () => {
     fetchPortfolioData();
-    //the 10,000 is how long it waits before it reloads again. 
-    setInterval(fetchPortfolioData, 10000);  
     window.addEventListener("scroll", checkSlide);
     checkSlide(); 
 });
