@@ -191,10 +191,10 @@
     font-size: 16px;
 }
 .google-form-container {
-    max-width: 94%;  
+    max-width: 93%;  
     margin: 0 auto;
     padding: 10px;
-    background: #343741; 
+    background: #2a2d36; 
     border-radius: 50px;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
     overflow: hidden; 
@@ -202,5 +202,5 @@
 
 .google-form-container iframe {
     border-radius: 8px; 
-    background: #343741; 
+    background: #2a2d36; 
 }
