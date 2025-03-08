@@ -10,6 +10,7 @@
 
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/schedule.css">
+    <script type="module" src="js/schedule.js"></script>
 </head>
 <body>
     <script id="replace_with_navbar" src="js/nav.js"></script>
@@ -28,10 +29,9 @@
     </div>
     <div class="scheduleContainer">
         <!--insert calendar here-->
-        <div class="scheduleHeader">
-            <p class="monthYear"></p>
+        <div class="scheduleHeader" id="scheduleHeader">
         </div>
-        <div class="scheduleGrid">
+        <div class="scheduleGrid" id="scheduleGrid">
             <div class="day"><p>Sun</p></div>
             <div class="day"><p>Mon</p></div>
             <div class="day"><p>Tues</p></div>
@@ -39,8 +39,6 @@
             <div class="day"><p>Thurs</p></div>
             <div class="day"><p>Fri</p></div>
             <div class="day"><p>Sat</p></div>
-            <div class="dayPanel">insertdayhere</div>
-        
         </div>
     </div>
 </body>
