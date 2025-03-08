@@ -37,28 +37,37 @@
 
 .scheduleContainer{
     /*background-color: #C7C9C8;*/
-    width: 90%;
+    width: 95%;
     height: 60vw;
     margin: 0 auto 20px auto;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
 
+    background-color: #C7C9C8;
+    border-radius: 10px;
+    box-shadow: 0 0 10px #D32737;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+.monthYear{
+    margin-top: 5px;
+    color: black;
+    font-size: xx-large;
+    font-weight: bolder;
 }
 
 .scheduleGrid{
     display: grid;
-    background-color: #C7C9C8;
-    border-radius: 10px;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
-    grid-template-rows: 60px 1fr 1fr 1fr 1fr 1fr;
-    width: 90%;
-    height: 95%;
-    box-shadow: 0 0 10px #D32737;
+    grid-template-rows: 65px 1fr 1fr 1fr 1fr 1fr 1fr;
+    width: 100%;
+    height: 100%;
     justify-content: center;
     color: black;
-    padding-left: 5px;
-    padding-right: 5px;
+
 }
 .day{
     background-color: #C7C9C8;
@@ -78,10 +87,17 @@
     top: 50%;
     transform: translate(-50%,-50%);
 }
-.dayPanel{
+.dayPanel, .dayPanelActive{
     background-color: #C7C9C8;
     box-shadow: 0 0 5px #343741;
-    margin: 5px;
+    margin: 2%;
     vertical-align: middle;
+    text-align: left;
+    font-weight: bold;
+    padding-left: 5px;
     border-radius: 10px;
+}
+.dayPanelActive{
+    border: 3px solid #0021A5;
+    box-shadow: 0 0 5px #002657;
 }
