@@ -4,14 +4,14 @@ export const ObservingResources = [
     {
         "Resource Type": "Observing",
         "Resource Name": "Signup to Observe!",
-        "Resource Link": "https://forms.gle/HxRCGjK9TkTmzLKY7",
+        "Resource Link": "https://docs.google.com/forms/d/e/1FAIpQLSeHNAwUByqYBCcJTKtkD3wkEnTqoaltJm2YsLV8uaPTgveTmA/viewform",
         "Display": "TRUE",
         "Index": "0"
     },
     {
         "Resource Type": "Observing",
         "Resource Name": "Signup Roster",
-        "Resource Link": "https://docs.google.com/spreadsheets/d/1r_Dt8ZNdDHkeHi25e36xfJpojqJLoxDwxNC4BB9Y4Sw/edit?usp=sharing",
+        "Resource Link": "https://docs.google.com/spreadsheets/d/1wffLFBy-N0Jhkc0ZV9LKlW21rwDtEBx45sQdwN7UJIs/edit?gid=425500269#gid=425500269",
         "Display": "TRUE",
         "Index": "1"
     },
