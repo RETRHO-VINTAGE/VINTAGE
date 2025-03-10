@@ -45,9 +45,9 @@
     justify-content: center;
     align-items: center;
 
-    background-color: #C7C9C8;
+    background-color: #eeeeee;
     border-radius: 10px;
-    box-shadow: 0 0 10px #D32737;
+    box-shadow: 0 0 10px #6A2A60;
     padding-left: 5px;
     padding-right: 5px;
 }
@@ -70,7 +70,8 @@
 
 }
 .day{
-    background-color: #C7C9C8;
+    background-color: #0021A5;
+    color: white;
     box-shadow: 0 0 5px #343741;
     margin: 2%;
     margin-top: 10px;
@@ -79,7 +80,8 @@
     vertical-align: middle;
     font-size: large;
     font-weight: bold;
-    border-radius: 10px;
+    border-radius: 5px;
+    border: 3px solid #0021A5;
 }
 .day p{
     position: relative;
@@ -87,17 +89,20 @@
     top: 50%;
     transform: translate(-50%,-50%);
 }
-.dayPanel, .dayPanelActive{
-    background-color: #C7C9C8;
+.dayPanel, .dayPanelActive, .dayPanelNotThisMonth{
+    background-color: #eeeeee;
     box-shadow: 0 0 5px #343741;
-    margin: 2%;
+    margin: 1%;
     vertical-align: middle;
     text-align: left;
     font-weight: bold;
     padding-left: 5px;
-    border-radius: 10px;
+    border-radius: 5px;
 }
-.dayPanelActive{
+.dayPanelNotThisMonth{
+    background-color: #cccccc;
+}
+.dayPanelActive{ /*today*/
     border: 3px solid #0021A5;
     box-shadow: 0 0 5px #002657;
 }
