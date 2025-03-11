@@ -58,7 +58,7 @@
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
-    gap: 30px;
+    gap: 60px;
     max-width: 1000px;
     margin: 40px auto;
     padding: 0 20px;
@@ -69,11 +69,34 @@
 .location-info {
     background-color: #3a3f47;
     padding: 20px;
-    flex: 1 1 45%;
+    flex: 1 1 50%;
     border-radius: 10px;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
     text-align: center;
-    margin-top: 50px;
+    margin-top: 15px;
+}
+
+.location-info h2 {
+    margin-bottom: 0;
+    border-bottom: 2px solid #4e89ae;
+    display: inline-block;
+    padding-bottom: 3px;
+}
+
+/* Observatory Location Information */
+.location-table td:first-child {
+    font-weight: bold;
+    width: 63%;
+    text-align: left;
+    line-height: 3.5;
+    font-size: 18px;
+}
+
+.location-table td:last-child {
+    white-space: normal;
+    line-height: 1.5;
+    word-spacing: 2px;
+    text-align: right;
 }
 
 .location-info .lattitude-longitude p {
@@ -84,7 +107,7 @@
 
 /* Google Maps Section */
 .google-maps-section {
-    flex: 1 1 50%;
+    flex: 1 1 30%;
     display: flex;
     justify-content: center;
     align-items: center;
