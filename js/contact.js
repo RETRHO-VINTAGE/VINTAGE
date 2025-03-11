@@ -34,7 +34,7 @@ function fetchContactFaqData() {
             }
 
             let faqContainer = document.querySelector(".faq-section");
-            faqContainer.querySelector(".faq-item").forEach(item=>item.remove());
+            faqContainer.querySelectorAll(".faq-item").forEach(item=>item.remove());
 
             data.values.forEach((row) => {
                 if (row.length < 2) return;
