@@ -177,10 +177,10 @@
 /* Anonymous Question Box */
 .question-section {
     margin: auto;
-    padding: 30px;
+    margin-top: 30px;
+    padding: 0;
     text-align: center;
 }
-
 
 #question-input {
     width: 60%;
@@ -190,8 +190,17 @@
     border: 1px solid #ccc;
     font-size: 16px;
 }
+
+/* Contact Us Form Box */
+.contact-form {
+    margin: auto;
+    margin-top: 30px;
+    padding: 0;
+    text-align: center;
+}
+
 .google-form-container {
-    max-width: 95%;  
+    max-width: 90%;  
     margin: 0 auto;
     padding: 10px;
     background: #2a2d36; 

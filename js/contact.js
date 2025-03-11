@@ -33,7 +33,8 @@ function fetchContactFaqData() {
                 return;
             }
 
-            let contactHTML = "";
+            let faqContainer = document.querySelector(".faq-section");
+            faqContainer.querySelector(".faq-item").forEach(item=>item.remove());
 
             data.values.forEach((row) => {
                 if (row.length < 2) return;
@@ -45,21 +46,21 @@ function fetchContactFaqData() {
                 let visible = row[4]; // Column E
 
                 if (visible.toUpperCase() === "TRUE") {
-                    contactHTML += `
-                        <div class="faq-item">
-                            <button type="button" class="faq-question">
-                                ${question} <span class="icon">+</span>
-                            </button>
-                            <div class="faq-answer">
-                                ${answer} 
-                                ${link ? `<br><a href="${link}" target="_blank">${linkText}</a>` : ""}
-                            </div>
+                    const faqItem = document.createElement("div");
+                    faqItem.classList.add("faq-item");
+                    faqItem.innerHTML = `
+                        <button type="button" class="faq-question">
+                            ${question} <span class="icon">+</span>
+                        </button>
+                        <div class="faq-answer">
+                            ${answer} 
+                            ${link ? `<br><a href="${link}" target="_blank">${linkText}</a>` : ""}
                         </div>
                     `;
+                    faqContainer.appendChild(faqItem);
                 }
             });
 
-            document.querySelector(".faq-section").innerHTML = contactHTML;
             attachFAQListeners();
         })
         .catch(error => console.error("Error fetching data:", error));
