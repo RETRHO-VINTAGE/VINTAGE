@@ -27,6 +27,7 @@
 
 }
 .portalTitleText{
+    font-family: "Oswald", sans-serif;
     position: absolute;
     top: 50%;
     left: 50%;
@@ -129,6 +130,7 @@
     border: 1px solid darkgrey;
 }
 .searchPortal th{
+    font-family: "Oswald", sans-serif;
     background-color: #FA4616;
     color: black;
     height: 30px;
