@@ -341,3 +341,83 @@ button[type="submit"] {
 button[type="submit"]:hover {
     background-color: #FA4616;
 }
+
+/* Outer container for the section */
+#dynamic-section {
+    background: linear-gradient(135deg, #0d1b2a, #1b263b);
+    width: 100vw; 
+    margin: 10 px; 
+    border-radius: 0; 
+    box-shadow: none;
+    padding: 50px 10vw; 
+    color: #fff;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Subtle animated background glow effect */
+@keyframes animatedGlow {
+    0% { box-shadow: 0px 0px 10px rgba(255, 70, 70, 0.1); }
+    50% { box-shadow: 0px 0px 30px rgba(255, 70, 70, 0.3); }
+    100% { box-shadow: 0px 0px 10px rgba(255, 70, 70, 0.1); }
+}
+
+.text-block {
+    background: rgba(255, 255, 255, 0.08);
+    padding: 20px;
+    margin: 15px 0;
+    border-left: 4px solid #FA4616;
+    border-radius: 10px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(5px);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    position: relative;
+}
+
+/* Hover effect for floating effect */
+.text-block:hover {
+    transform: translateY(-5px);
+    box-shadow: 0px 8px 15px rgba(255, 70, 70, 0.3);
+}
+
+/* Header inside text block */
+.text-block h2 {
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #FA4616;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Fancy animated underline */
+.text-block h2::after {
+    content: "";
+    display: block;
+    width: 50px;
+    height: 2px;
+    background: #FA4616;
+    margin: 5px auto 0;
+    transition: width 0.3s ease-in-out;
+}
+
+.text-block:hover h2::after {
+    width: 80px;
+}
+
+/* Subtle divider line */
+.text-block::after {
+    content: "";
+    display: block;
+    height: 1px;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.1);
+    margin-top: 10px;
+}
+
+/* Paragraph text */
+.text-block p {
+    font-size: 1.1em;
+    color: #b0c4de;
+    opacity: 0.9;
+}

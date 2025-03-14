@@ -15,32 +15,40 @@ function changeImage() {
 
 setInterval(changeImage, 3000);
 
-/*
-function changeText() {
-    const welcomeText = document.querySelector('main p');
-    if (welcomeText) {
-        welcomeText.textContent = 'Welcome to the RETRHO website. Enjoy your stay!';
+const sheetID = "1Qszjl0dteIPQ31EV-S3nz5M-sfk3YDuVyn3sVnE7-Mo";
+const apiKey = "AIzaSyASQPliHBF4eIKF1DjCiGYfGzw6lp10kQc";   
+const range = "Sheet1!A2:C";      
+
+const url = `https://sheets.googleapis.com/v4/spreadsheets/${sheetID}/values/${range}?key=${apiKey}`;
+
+async function fetchData() {
+    try {
+        const response = await fetch(url);
+        const data = await response.json();
+        const container = document.getElementById("dynamic-content");
+
+        // Clear existing content before adding new data
+        container.innerHTML = ""; 
+
+        if (data.values) {
+            data.values.forEach((row) => {
+                // Create a wrapper div for each row
+                let textBlock = document.createElement("div");
+                textBlock.classList.add("text-block"); // Add a CSS class for styling
+                
+                row.forEach((text, colIndex) => {
+                    let paragraph = document.createElement(colIndex === 0 ? "h2" : "p");
+                    paragraph.textContent = text;
+                    textBlock.appendChild(paragraph);
+                });
+
+                container.appendChild(textBlock);
+            });
+        }
+    } catch (error) {
+        console.error("Error fetching data:", error);
     }
-}*/
+}
 
-// document.addEventListener("DOMContentLoaded", function () {
-//     const slideElements = document.querySelectorAll(".slide-in-left, .slide-in-right");
-
-//     function checkSlide() {
-//         const triggerBottom = window.innerHeight * 0.75;
-
-//         slideElements.forEach((element) => {
-//             const boxTop = element.getBoundingClientRect().top;
-
-//             if (boxTop < triggerBottom) {
-//                 element.classList.add("show");
-//             }
-//         });
-//      }
-  
-//     window.addEventListener("scroll", checkSlide);
-//     checkSlide(); // Run once in case elements are already in view
-// });
-
-
-
+// Fetch data when the page loads
+document.addEventListener("DOMContentLoaded", fetchData);
