@@ -52,6 +52,7 @@ header {
 
 }
 .navbarPage {
+    font-family: "Oswald", sans-serif;
     flex: 1;
     color: white;
     padding: 15px 10px 10px 10px;

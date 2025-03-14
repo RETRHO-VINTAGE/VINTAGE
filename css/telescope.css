@@ -1,6 +1,7 @@
 /* Telescope Page Title */
 .telescope-title h1 {
     text-align: center;
+    font-family: "Oswald", sans-serif;
     font-size: 50px;
     font-weight: 600;
     margin-top: 100px;
@@ -26,6 +27,7 @@
 }
 
 .tele-info-section h2 {
+    font-family: "Oswald", sans-serif;
     font-size: 1.8rem;
     margin-bottom: 15px;
     border-bottom: 2px solid #4e89ae;
@@ -77,6 +79,7 @@
 }
 
 .location-info h2 {
+    font-family: "Oswald", sans-serif;
     margin-bottom: 0;
     border-bottom: 2px solid #4e89ae;
     display: inline-block;

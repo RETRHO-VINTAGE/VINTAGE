@@ -11,8 +11,10 @@
 .warmGrey1 {color: #D8D4D7}
 
 .resourcesTitle h1{
-    font-size: 48px;
+    font-family: "Oswald", sans-serif;
+    font-size: 50px;
     margin-bottom: 40px;
+    margin-top: 100px;
 }
 
 .upperText{
@@ -34,8 +36,9 @@
 }
 
 .resourceType h1{
-   text-align: left;
-   font-size: 30px;
+    font-family: "Oswald", sans-serif;
+    text-align: left;
+    font-size: 30px;
 }
 .resourceType ul{
     /*list-style-position: inside;*/
