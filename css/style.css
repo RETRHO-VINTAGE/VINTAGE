@@ -345,8 +345,8 @@ button[type="submit"]:hover {
 /* Outer container for the section */
 #dynamic-section {
     background: linear-gradient(135deg, #0d1b2a, #1b263b);
-    width: 100vw; 
-    margin: 10 px; 
+    width: 100%; 
+    margin: 0 px; 
     border-radius: 0; 
     box-shadow: none;
     padding: 50px 10vw; 
@@ -356,7 +356,6 @@ button[type="submit"]:hover {
     overflow: hidden;
 }
 
-/* Subtle animated background glow effect */
 @keyframes animatedGlow {
     0% { box-shadow: 0px 0px 10px rgba(255, 70, 70, 0.1); }
     50% { box-shadow: 0px 0px 30px rgba(255, 70, 70, 0.3); }
@@ -375,13 +374,11 @@ button[type="submit"]:hover {
     position: relative;
 }
 
-/* Hover effect for floating effect */
 .text-block:hover {
     transform: translateY(-5px);
     box-shadow: 0px 8px 15px rgba(255, 70, 70, 0.3);
 }
 
-/* Header inside text block */
 .text-block h2 {
     font-size: 1.5em;
     font-weight: bold;
@@ -390,7 +387,6 @@ button[type="submit"]:hover {
     letter-spacing: 1px;
 }
 
-/* Fancy animated underline */
 .text-block h2::after {
     content: "";
     display: block;
@@ -405,7 +401,6 @@ button[type="submit"]:hover {
     width: 80px;
 }
 
-/* Subtle divider line */
 .text-block::after {
     content: "";
     display: block;
@@ -415,7 +410,6 @@ button[type="submit"]:hover {
     margin-top: 10px;
 }
 
-/* Paragraph text */
 .text-block p {
     font-size: 1.1em;
     color: #b0c4de;
