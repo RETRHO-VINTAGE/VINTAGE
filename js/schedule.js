@@ -122,8 +122,37 @@ function generateShift(data, currentObsNight, date, parent){
     if(Number(nightDateParts[1]) == date){
         //wrapper
         htmlInjection = '<div class="shiftWrapper">';
+
+        //text for the popup
+        const popup = document.createElement('div');
+        popup.classList.add("popup");
+        /*popup.addEventListener('click', (e) => {
+            closePopup(e);
+        });*/
+        const closeButton = document.createElement('button');
+        closeButton.classList.add('popupButton');
+        closeButton.innerHTML = "X";
+        popup.appendChild(closeButton);
+        closeButton.addEventListener('click', (e) => {
+            console.log("hit button");
+            console.log(e.parentNode);
+        });
+        popup.innerHTML += '<h1>' + date + '</h1>';
+        //shift 1
+            //senior observer
+            //juniors
+        //shift 2
+            //senior observer
+            //juniors
+        //popup.innerHTML += '<p>' + data.values[currentObsNight][2] + ' JR observers scheduled<p>';
+
         //console.log("observation on this day: " + (monthlastdate-i+1));
+
+        //2 shifts, currentObsNight index is first shift
         if(nextNightDateParts[1] === nightDateParts[1] && data.values[currentObsNight][1] === "First"){
+            //popup first shift
+            popup.innerHTML += '<h2>Shift 1</h2><p>Senior Observer: '; 
+
             //first shift
             if(data.values[currentObsNight][3] == ""){
                 //no senior observer
@@ -133,17 +162,28 @@ function generateShift(data, currentObsNight, date, parent){
                 shift.classList.add("shift1");
                 shift.innerHTML = "<b>Shift 1:</b> NO SNR OBSERVER";
                 shiftWrap.appendChild(shift);
+
+                //insert senior observer popup
+                popup.innerHTML += "NONE</p>";
+                
             }
-            else{
+            else{ //there is a senior observer
                 htmlInjection += '<div class="shiftGood shift1" ><b>Shift 1:</b> ' + data.values[currentObsNight][3] + '</div>'; 
                 const shift = document.createElement('div');
                 shift.classList.add("shiftGood");
                 shift.classList.add("shift1");
                 shift.innerHTML = '<b>Shift 1:</b> ' + data.values[currentObsNight][3];
                 shiftWrap.appendChild(shift);
+
+                //insert senior observer popup
+                popup.innerHTML += data.values[currentObsNight][3] + '</p>';
             }
-            //same night, curent is first shift and next is second shift
-            if(data.values[currentObsNight][3] == ""){
+            //TODO: add junior observers
+
+
+            //second shift
+            popup.innerHTML += '<h2>Shift 2</h2><p>Senior Observer: ';
+            if(data.values[currentObsNight-1][3] == ""){
                 //no senior observer
                 htmlInjection += '<div class="shiftEmpty shift2" ><b>Shift 2:</b> NO SNR OBSERVER</div>';
                 const shift = document.createElement('div');
@@ -151,22 +191,30 @@ function generateShift(data, currentObsNight, date, parent){
                 shift.classList.add("shift2");
                 shift.innerHTML = '<b>Shift 2:</b> NO SNR OBSERVER';
                 shiftWrap.appendChild(shift);
+
+                //popup
+                popup.innerHTML += "NONE</p>";
             }
             else{
-                htmlInjection += '<div class="shiftGood shift2" ><b>Shift 2:</b> ' + data.values[currentObsNight][3] + '</div>'; 
+                htmlInjection += '<div class="shiftGood shift2" ><b>Shift 2:</b> ' + data.values[currentObsNight-1][3] + '</div>'; 
                 const shift = document.createElement('div');
                 shift.classList.add("shiftGood");
                 shift.classList.add("shift2");
-                shift.innerHTML = '<b>Shift 2:</b> ' + data.values[currentObsNight][3];
+                shift.innerHTML = '<b>Shift 2:</b> ' + data.values[currentObsNight-1][3];
                 shiftWrap.appendChild(shift);
-                
+
+                //popup
+                popup.innerHTML += data.values[currentObsNight-1][3] + '</p>';
             }
             currentObsNight--;
             moveObsNight++;
         }
+
+        //same night, currentObsNight is second shift
         else if(nextNightDateParts[1] === nightDateParts[1] && data.values[currentObsNight][1] === "Second"){
+            popup.innerHTML += '<h2>Shift 1</h2><p>Senior Observer: '; 
             //first shift
-            if(data.values[currentObsNight][3] == ""){
+            if(data.values[currentObsNight-1][3] == ""){
                 //no senior observer
                 htmlInjection += '<div class="shiftEmpty shift1" ><b>Shift 1:</b> NO SNR OBSERVER</div>';
                 const shift = document.createElement('div');
@@ -174,16 +222,24 @@ function generateShift(data, currentObsNight, date, parent){
                 shift.classList.add("shift1");
                 shift.innerHTML = '<b>Shift 1:</b> NO SNR OBSERVER';
                 shiftWrap.appendChild(shift);
+
+                //insert senior observer popup
+                popup.innerHTML += "NONE</p>";
             }
             else{
-                htmlInjection += '<div class="shiftGood shift1" ><b>Shift 1:</b> ' + data.values[currentObsNight][3] + '</div>'; 
+                htmlInjection += '<div class="shiftGood shift1" ><b>Shift 1:</b> ' + data.values[currentObsNight-1][3] + '</div>'; 
                 const shift = document.createElement('div');
                 shift.classList.add("shiftGood");
                 shift.classList.add("shift1");
-                shift.innerHTML = '<b>Shift 1:</b> ' + data.values[currentObsNight][3];
+                shift.innerHTML = '<b>Shift 1:</b> ' + data.values[currentObsNight-1][3];
                 shiftWrap.appendChild(shift);
+
+                //insert senior observer popup
+                popup.innerHTML += data.values[currentObsNight-1][3] + "</p>";
             }
-            //same night, current is second shift and next is first shift
+
+            //second shift
+            popup.innerHTML += '<h2>Shift 2</h2><p>Senior Observer: '; 
             if(data.values[currentObsNight][3] == ""){
                 //no senior observer
                 htmlInjection += '<div class="shiftEmpty shift2" ><b>Shift 2:</b> NO SNR OBSERVER</div>';
@@ -192,6 +248,9 @@ function generateShift(data, currentObsNight, date, parent){
                 shift.classList.add("shift2");
                 shift.innerHTML = '<b>Shift 2:</b> NO SNR OBSERVER';
                 shiftWrap.appendChild(shift);
+
+                //popup
+                popup.innerHTML += "NONE</p>";
             }
             else{
                 htmlInjection += '<div class="shiftGood shift2" ><b>Shift 2:</b> ' + data.values[currentObsNight][3] + '</div>'; 
@@ -200,11 +259,16 @@ function generateShift(data, currentObsNight, date, parent){
                 shift.classList.add("shift2");
                 shift.innerHTML = '<b>Shift 2:</b> ' + data.values[currentObsNight][3];
                 shiftWrap.appendChild(shift);
+
+                //popup
+                popup.innerHTML += data.values[currentObsNight][3] + "</p>";
             }
             currentObsNight--;
             moveObsNight++;
         }
+        //only one shift that day
         else{ //next is not same day 
+
             //first shift
             if(data.values[currentObsNight][3] == ""){
                 //no senior observer
@@ -215,6 +279,9 @@ function generateShift(data, currentObsNight, date, parent){
                     shift.classList.add("shift1");
                     shift.innerHTML = '<b>Shift 1:</b> NO SNR OBSERVER';
                     shiftWrap.appendChild(shift);
+
+                    //popup
+                    popup.innerHTML += '<h2>Shift 1</h2><p>Senior Observer: NONE</p>';
                 }
                 else{
                     htmlInjection += '<div class="shiftEmpty shift2" ><b>Shift 2:</b> NO SNR OBSERVER</div>';
@@ -223,10 +290,11 @@ function generateShift(data, currentObsNight, date, parent){
                     shift.classList.add("shift2");
                     shift.innerHTML = '<b>Shift 2:</b> NO SNR OBSERVER';
                     shiftWrap.appendChild(shift);
+                    popup.innerHTML += '<h2>Shift 2</h2><p>Senior Observer: NONE</p>';
                 }
                 
             }
-            else{
+            else{ //senior observers exist
                 if(data.values[currentObsNight][1] === "First"){
                     htmlInjection += '<div class="shiftGood shift1" ><b>Shift 1:</b>' + data.values[currentObsNight][3] + '</div>'; 
                     const shift = document.createElement('div');
@@ -234,6 +302,8 @@ function generateShift(data, currentObsNight, date, parent){
                     shift.classList.add("shift1");
                     shift.innerHTML = '<b>Shift 1:</b>' + data.values[currentObsNight][3];
                     shiftWrap.appendChild(shift);
+
+                    popup.innerHTML += '<h2>Shift 1</h2><p>Senior Observer: ' + data.values[currentObsNight][3] + '</p>';
                 }
                 else{
                     htmlInjection += '<div class="shiftGood shift 2" ><b>Shift 2:</b> ' + data.values[currentObsNight][3] + '</div>';
@@ -242,10 +312,15 @@ function generateShift(data, currentObsNight, date, parent){
                     shift.classList.add("shift2");
                     shift.innerHTML = '<b>Shift 2:</b>' + data.values[currentObsNight][3];
                     shiftWrap.appendChild(shift); 
+
+                    popup.innerHTML += '<h2>Shift 2</h2><p>Senior Observer: ' + data.values[currentObsNight][3] + '</p>';
                 }
                 
             }
         }
+        
+        shiftWrap.appendChild(popup);
+
         htmlInjection += '</div>';
         //console.log("next night: " + nextNightDateParts[1]);
         currentObsNight--;
@@ -308,7 +383,9 @@ const generateCalendar = () => {
                     
                     if(currentObsNight >= 0){
                         let x = generateShift(data, currentObsNight, monthlastdate-i+1, dayDiv);
-                        dayDiv.id = currentObsNight;
+                        if(x[1] !== 0){
+                            dayDiv.id = currentObsNight;
+                        }
                         htmlInjection += x[0];
                         currentObsNight -= x[1];
                         dayDiv.addEventListener("click", (e) => {
@@ -333,7 +410,9 @@ const generateCalendar = () => {
                     
                     if(currentObsNight >= 0){
                         let x = generateShift(data, currentObsNight, i, dayDiv);
-                        dayDiv.id = currentObsNight;
+                        if(x[1] !== 0){
+                            dayDiv.id = currentObsNight;
+                        }
                         htmlInjection += x[0];
                         currentObsNight -= x[1];
                         dayDiv.addEventListener("click", (e) => {
@@ -351,7 +430,9 @@ const generateCalendar = () => {
                     htmlInjection += '<div class="dayPanelNotThisMonth"><h1>' + (i - dayend + 1) + '</h1>';
                     if(currentObsNight >= 0){
                         let x = generateShift(data, currentObsNight, i-dayend+1);
-                        dayDiv.id = currentObsNight;
+                        if(x[1] !== 0){
+                            dayDiv.id = currentObsNight;
+                        }
                         htmlInjection += x[0];
                         currentObsNight -= x[1];
                         dayDiv.addEventListener("click", (e) => {
@@ -371,9 +452,29 @@ const generateCalendar = () => {
 }
 
 function expand(e, currentObsNight){
+    console.log("openpopup");
     console.log(e);
     console.log(e.target);
     console.log(currentObsNight);
+    console.log(e.target.className);
+    console.log(e.target.children);
+   
+    if(e.target.className === "dayPanelNotThisMonth" || e.target.className === "dayPanel" || e.target.className ==="dayPanelActive"){
+        //daypanel has at least one shift
+        if(e.target.id !== ""){
+            console.log("id");
+            const shiftWrapper = e.target.lastChild;
+            //console.log(shiftWrapper.zindex);
+            const popup = shiftWrapper.lastChild;
+            popup.style.display = "flex";
+            console.log(shiftWrapper);
+        }
+    }
+
+}
+function closePopup(e){
+    console.log("closepopup");
+    console.log(e);
 }
 
 document.addEventListener('DOMContentLoaded', () => {
