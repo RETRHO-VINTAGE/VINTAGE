@@ -25,13 +25,14 @@
         <!-- Login Modal -->
         <div id="loginModal" class="modal">
             <div class="modal-content">
-                <span class="close-button" onclick="closeLoginModal()">&times;</span>
+                <span class="close" onclick="closeLoginModal()">&times;</span>
                 <h2 style="font-weight: bold; font-size: 1.5em; color: black; margin-bottom: 5px;">Login to RETRHO</h2>
-                <form>
-                    <input type="text" placeholder="Username" required>
-                    <input type="password" placeholder="Password" required>
+                <form id="loginForm">
+                    <input type="text" id="loginUsername" placeholder="Username" required>
+                    <input type="password" id="loginPassword" placeholder="Password" required>
                     <button type="submit">Login</button>
                 </form>
+                <div id="loginError"></div>
             </div>
         </div>
 
