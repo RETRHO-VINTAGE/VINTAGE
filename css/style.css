@@ -168,11 +168,21 @@ footer {
     background-color: #002657;
     color: white;
     bottom: 0;
-    height: 100px;
+    height: 80px;
     width: 100%;
 }
 footer p{
     background-color: #002657;
+}
+
+footer a {
+    color: #1e90ff;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+footer a:hover {
+    color: #FA4616;
 }
 
 .portfolio-container {
