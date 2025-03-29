@@ -64,7 +64,6 @@ function generateShift(data, currentObsNight, date, parent){
             nextNightDateParts = data.values[currentObsNight-1][0].split("/");
         }
     }
-    
     //if there is- check this and next one for first and second shift
     if(nightDateParts != -1 && Number(nightDateParts[1]) == date){
         //console.log("observation on this day: " + (monthlastdate-i+1));
@@ -228,7 +227,7 @@ function generateShift(data, currentObsNight, date, parent){
             }
         }
         
-        shiftWrap.appendChild(popup);
+        //shiftWrap.appendChild(popup);
 
         //console.log("next night: " + nextNightDateParts[1]);
         currentObsNight--;
@@ -324,20 +323,19 @@ const generateCalendar = () => {
                     const dayDiv = document.createElement('div');
                     dayDiv.className = "dayPanelNotThisMonth";
                     dayDiv.innerHTML = '<h1>' + (i - dayend + 1) + '</h1>';
+                
                     if(currentObsNight >= 0){
-                        let x = generateShift(data, currentObsNight, i-dayend+1);
+                        let x = generateShift(data, currentObsNight, i-dayend+1, dayDiv);
                         if(x !== 0){
                             dayDiv.id = currentObsNight;
                         }
                         currentObsNight -= x;
-                        dayDiv.addEventListener("click", (e, currentObsNight, data) => {
+                        dayDiv.addEventListener("click", (e) => {
                             expand(e, data);
                         });
                     }
-                    
                     scheduleContainer.appendChild(dayDiv);
                 }
-            
                 //console.log(months[month] + year);
                 //scheduleContainer.insertAdjacentHTML("beforeend", htmlInjection);
             }).catch(error => console.error("Error fetching data: ", error));
