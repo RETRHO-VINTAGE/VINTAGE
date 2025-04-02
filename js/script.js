@@ -5,6 +5,10 @@ console.log('RETRHO website loaded.');
 let index = 0;
 const images = document.querySelectorAll('.gallery img');
 
+if (images.length > 0) {
+    images[0].classList.add('active'); 
+}
+
 function changeImage() {
     if (images.length > 0) {
         images[index].classList.remove('active');
@@ -14,7 +18,6 @@ function changeImage() {
 }
 
 setInterval(changeImage, 3000);
-
 const sheetID = "1Qszjl0dteIPQ31EV-S3nz5M-sfk3YDuVyn3sVnE7-Mo";
 const apiKey = "AIzaSyASQPliHBF4eIKF1DjCiGYfGzw6lp10kQc";   
 const range = "Sheet1!A2:C";      
