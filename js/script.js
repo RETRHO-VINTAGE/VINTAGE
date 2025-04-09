@@ -6,7 +6,7 @@ let index = 0;
 const images = document.querySelectorAll('.gallery img');
 
 if (images.length > 0) {
-    images[0].classList.add('active'); 
+    images[0].classList.add('active');  
 }
 
 function changeImage() {
