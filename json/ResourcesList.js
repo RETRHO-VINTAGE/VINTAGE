@@ -18,7 +18,7 @@ export const ObservingResources = [
     {
         "Resource Type": "Observing",
         "Resource Name": "Submit a Target",
-        "Resource Link": "https://drive.google.com/drive/folders/1-0n_zsw58PuXvxygkwPdDN5MeXLA03Og?usp=drive_link",
+        "Resource Link": "https://docs.google.com/forms/d/1bGTlyw-T2uAvb-IsXxiG1VnPJfSuvbvw05kc7TQnk9Y/viewform?edit_requested=true",
         "Display": "TRUE",
         "Index": "2"
     },
