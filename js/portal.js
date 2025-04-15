@@ -6,6 +6,7 @@ const radioObj = document.getElementById("objName");
 const radioType = document.getElementById("objType");
 const radioCoords = document.getElementById("coords");
 const reduceButton = document.getElementById("reduced");
+const instructions = document.getElementById("formatDirections");
 
 let currentPage = 1;
 const rowsPerPage = 20;
@@ -38,7 +39,61 @@ function filterOnEnter() {
     if (radioObj.checked && searchText) {
         queryParts.push(`LOWER(A) CONTAINS LOWER('${searchText}')`);
     } else if (radioType.checked && searchText) {
-        queryParts.push(`LOWER(B) CONTAINS LOWER('${searchText}')`);
+        //date range
+        const dates = searchText.split(/\s*,\s/); //splits by comma and space
+        let startDate = dates[0];
+        //format the date
+        let endDate = dates[1];
+        console.log(startDate);
+        console.log(endDate);
+        let validStart = false;
+        let validEnd = false;
+        //TODO: format the dates- MUST be in YYYY-MM-DD
+
+        if(!(/\d{4}-((0\d)|(1[12]))-(([012]\d)|[3][01])/.test(startDate))){
+            console.log("invalid format");
+            //invalid format
+            if(/((0\d)|(1[12]))[/](([012]\d)|[3][01])[/]\d{4}/.test(startDate)){ //if in mm/dd/yyyy
+                //reformatable
+                let parts = startDate.split('/');
+                startDate = parts[2] + "-" + parts[0] + "-" + parts[1];
+                console.log(startDate);
+                validStart = true;
+            }
+        }
+        else{
+            validStart = true;
+        }
+
+        if(endDate != undefined && !(/\d{4}-((0\d)|(1[12]))-(([012]\d)|[3][01])/.test(endDate))){
+            console.log("invalid format");
+            //invalid format
+            if(/((0\d)|(1[12]))[/](([012]\d)|[3][01])[/]\d{4}/.test(endDate)){ //if in mm/dd/yyyy
+                //reformatable
+                let parts = endDate.split('/');
+                endDate = parts[2] + "-" + parts[0] + "-" + parts[1];
+                console.log(endDate);
+                validEnd = true;
+            }
+        }
+        else{
+            validEnd = true
+        }
+        if(!validStart || !validEnd){
+            alert("Invalid date format");
+        }
+        //otherwise valid format
+
+        if(endDate === undefined && validStart){
+            console.log("no end date");
+            queryParts.push(`C > date "${startDate}"`);
+        }
+        else if(validStart && validEnd){
+            queryParts.push(`C > date "${startDate}" AND C < date "${endDate}"`);
+        }
+        
+        //queryParts.push(`C BETWEEN '&TEXT(DATEVALUE(${startDate}), "yyyy-mm-dd")&' AND '&TEXT(DATEVALUE('${endDate}'), "yyyy-mm-dd")&'`);
+        //queryParts.push(`LOWER(B) CONTAINS LOWER('${searchText}')`);
     } else if (radioCoords.checked && searchText) {
         const coords = searchText.split(/\s*,\s*/);
         const ra = coords[0];
@@ -51,6 +106,17 @@ function filterOnEnter() {
 
         queryParts.push(`LOWER(F) CONTAINS LOWER('${ra}')`);
         queryParts.push(`LOWER(G) CONTAINS LOWER('${dec}')`);
+    }
+    if(radioObj.checked){
+        instructions.style.display = "none";
+    }
+    else if(radioType.checked){
+        instructions.style.display = "block";
+        instructions.innerHTML = "Format Date as \"MM/DD/YYYY\" or \"YYYY-MM-DD\".";
+    }
+    else if(radioCoords.checked){
+        instructions.style.display = "block";
+        instructions.innerHTML = "Format Coordinats as RA, DEC; as \"HH MM SS, DD MM SS\". There must be a space between RA and DEC. Decimals are permitted for seconds. An example is: \"12 25 48.28, 33 32 47\".";
     }
 
     if (reducedOnly) {
