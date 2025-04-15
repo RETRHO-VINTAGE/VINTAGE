@@ -140,6 +140,7 @@
     height: 30px;
     border-top: none;*/
 }
+
 .searchPortal th:first-of-type{
     border-radius: 20px 0 0 0;
     border-right: 1px solid #343741;
@@ -169,6 +170,30 @@
 }
 .searchPortal td:last-of-type{
     border-right: none;
+}
+
+
+.pagination-controls {
+    text-align: center; 
+    margin-top: 1rem;
+    transform: translateX(30px); 
+}
+
+.pagination-controls button {
+    background-color: #1e1e2f;
+    color: #fff;
+    border: none;
+    padding: 8px 12px;
+    margin: 0 4px;
+    border-radius: 4px;
+    font-family: "Exo 2", sans-serif;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.pagination-controls button:disabled {
+    background-color: #FA4616;
+    cursor: not-allowed;
 }
 
  
