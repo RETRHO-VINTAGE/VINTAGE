@@ -45,7 +45,7 @@
 .scheduleContainer{
     /*background-color: #C7C9C8;*/
     width: 98%;
-    min-height: 60vw;
+    min-height: 40vh;
     margin: 0 auto 20px auto;
     display: flex;
     flex-direction: column;
@@ -70,7 +70,7 @@
 .scheduleGrid{
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
-    grid-template-rows: 65px 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 65px 1fr 1fr 1fr 1fr 1fr min(0, 1fr);
     width: 100%;
     height: 100%;
     justify-content: center;

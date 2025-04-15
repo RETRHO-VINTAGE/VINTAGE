@@ -338,7 +338,7 @@ const generateCalendar = () => {
                 }
                 //console.log(months[month] + year);
                 //scheduleContainer.insertAdjacentHTML("beforeend", htmlInjection);
-            }).catch(error => console.error("Error fetching data: ", error));
+            }).catch(error => console.error("Error fetching data: ", error));          
 }
 
 function expand(e, data){
