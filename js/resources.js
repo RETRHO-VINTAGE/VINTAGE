@@ -8,13 +8,15 @@ const sheetID = "1o2VcE-zJTLWFUQm-btTrJz91EUNwR7BneSCSTkLXplo";
 const apiKey = "AIzaSyASQPliHBF4eIKF1DjCiGYfGzw6lp10kQc";
 
 
-
 document.addEventListener('DOMContentLoaded', () => {
     if(document.querySelector("#resourcesList")){
         const div = document.querySelector("#resourcesList");
         //observing resources
         //createRsrcList(ObservingResources, div);
         parseAndCreateRrscSheet("ObservingResources", div);
+
+        //data reduction pipeline 
+        parseAndCreateRrscSheet("DataReduction", div);
 
         //admin resources
         //createRsrcList(AdminResources, div);
