@@ -113,7 +113,7 @@
     font-size: 18;
     border-radius: 20px;
     border: none;
-    height: 50vw;
+    max-height: 50vw;
     color: black;
 }
 /*.searchPortal table, th, tr, td{
@@ -140,20 +140,48 @@
     height: 30px;
     border-top: none;*/
 }
+.searchPortal tr{
+    min-height: 40px;
+    max-height: 50px;
+}
+.searchPortal tr:nth-child(even){
+    background-color: #D8D4D7;
+}
+.searchPortal tr:nth-child(odd){
+    background-color: #C7C9C8;
+}
 
 .searchPortal th:first-of-type{
     border-radius: 20px 0 0 0;
     border-right: 1px solid #343741;
     border-left: none;
+    width: 15%;
+}
+.searchPortal th:nth-child(2){
+    width: 5%;
+}
+.searchPortal th:nth-child(3){
+    width: 15%;
+}
+.searchPortal th:nth-child(4){
+    width: 8%;
+}
+.searchPortal th:nth-child(5){
+    width: 8%;
+}
+.searchPortal th:nth-child(6){
+    width: 21%;
 }
 .searchPortal th:last-of-type{
     border-radius: 0 20px 0 0;
     border-left: 1px solid #343741;
     border-right: none;
+    width: 7%;
+    
 }
 .searchPortal td{
     border: 1px solid #343741;
-    background-color: #C7C9C8;
+    /*background-color: #C7C9C8;*/
 }
 .searchPortal tr:last-of-type td:first-of-type{
     border-radius: 0 0 0 20px;
