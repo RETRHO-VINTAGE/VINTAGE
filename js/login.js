@@ -18,8 +18,6 @@
 //         .catch(error => console.error("Error fetching login data:", error));
 // }
 // fetchLoginData();
-// === Initialize Firebase ===
-// === Initialize Firebase ===
 const firebaseConfig = {
     apiKey: "AIzaSyC3PBpEbNb1qTfpSG5IEH7Ua4pxhsPO1LU",
     authDomain: "vintagewebsite.firebaseapp.com",
@@ -32,4 +30,3 @@ const firebaseConfig = {
   
   // Initialize Firebase
   firebase.initializeApp(firebaseConfig);
-  const auth = firebase.auth();

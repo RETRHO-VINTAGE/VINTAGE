@@ -29,24 +29,18 @@ window.onclick = function(event) {
 let users = {};
 function validateLogin(event) {
     event.preventDefault();
+    let username = document.getElementById("loginUsername").value.trim();
+    let password = document.getElementById("loginPassword").value.trim();
+    let errorMsg = document.getElementById("loginError");
 
-    const email = document.getElementById("loginUsername").value.trim();
-    const password = document.getElementById("loginPassword").value.trim();
-    const errorMsg = document.getElementById("loginError");
-
-    firebase.auth().signInWithEmailAndPassword(email, password)
-        .then((userCredential) => {
-            // Login successful
-            errorMsg.style.color = "green";
-            errorMsg.textContent = "Login successful! Redirecting...";
-            setTimeout(() => {
-                closeLoginModal();
-                window.location.href = "dashboard.html";
-            }, 1500);
-        })
-        .catch((error) => {
-            errorMsg.style.color = "red";
-            errorMsg.textContent = "Incorrect email or password.";
-            console.error("Login failed:", error.message);
-        });
+    if (users[username] === password) {
+        errorMsg.style.color = "green";
+        errorMsg.textContent = "Login successful! Redirecting...";
+        setTimeout(() => {
+            window.location.href = "dashboard.html";
+        }, 1500);
+    } else {
+        errorMsg.style.color = "red";
+        errorMsg.textContent = "Incorrect username or password.";
+    }
 }
