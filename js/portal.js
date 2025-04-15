@@ -11,7 +11,7 @@ let currentPage = 1;
 const rowsPerPage = 20;
 let currentData = [];
 
-// Load default data (first 20 rows) when page loads
+// Load first 20 rows when page loads
 window.addEventListener("DOMContentLoaded", () => {
     fetchFilteredData("SELECT *");
 });
@@ -75,7 +75,12 @@ function fetchFilteredData(query) {
             const jsonData = rows.map(row => {
                 let rowData = {};
                 headers.forEach((header, i) => {
-                    rowData[header] = row.c[i] ? row.c[i].v : "";
+                    const cell = row.c[i];
+                    if (header === "Date Observed" && cell && cell.f) {
+                        rowData[header] = cell.f; // Use formatted date string
+                    } else {
+                        rowData[header] = cell ? cell.v : "";
+                    }
                 });
                 return rowData;
             });
