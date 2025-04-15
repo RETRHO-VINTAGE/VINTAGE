@@ -19,6 +19,12 @@
         <script src="https://apis.google.com/js/api.js"></script>
         <script src="js/login.js"></script>
         <script id="replace_with_navbar" src="js/nav.js"></script>
+        <script>
+            // Redirect to index.html if not logged in
+            if (!localStorage.getItem('userEmail')) {
+                window.location.href = 'index.html';
+            }
+        </script>
 
         <div class="resourcesTitle">
             <h1>Observing Resources</h1>
