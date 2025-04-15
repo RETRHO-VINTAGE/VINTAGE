@@ -8,9 +8,9 @@ document.addEventListener('DOMContentLoaded', async () => {
     try {
         if (document.querySelector("#resourcesList")) {
             const div = document.querySelector("#resourcesList");
-
             // Load resources in order
             await parseAndCreateRrscSheet("ObservingResources", div);
+            await parseAndCreateRrscSheet("DataReduction", div);
             await parseAndCreateRrscSheet("AdminResources", div);
             await parseAndCreateRrscSheet("TrainingResources", div);
             await parseAndCreateRrscSheet("MiscellaneousResources", div);
