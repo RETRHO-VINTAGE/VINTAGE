@@ -168,3 +168,4 @@ function setupPaginationControls() {
     });
     paginationDiv.appendChild(nextBtn);
 }
+ 
