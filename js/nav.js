@@ -34,10 +34,11 @@ function initializeNavbar() {
         loginForm.addEventListener('submit', async (e) => {
             e.preventDefault();
             const email = document.getElementById('loginEmail').value.trim();
+            const password = document.getElementById('loginPassword').value.trim();
             const errorDiv = document.getElementById('loginError');
 
             try {
-                const isAuthorized = await verifyEmail(email);
+                const isAuthorized = await verifyEmail(email, password);
                 if (isAuthorized) {
                     errorDiv.style.color = '#22884c'; // gatorGreen
                     errorDiv.textContent = 'Login successful!';
@@ -46,11 +47,11 @@ function initializeNavbar() {
                     updateNavbar();
                 } else {
                     errorDiv.style.color = '#D32737'; // bottlebrushRed
-                    errorDiv.textContent = 'Email not authorized.';
+                    errorDiv.textContent = 'Invalid username or password.';
                 }
             } catch (error) {
                 errorDiv.style.color = '#D32737';
-                errorDiv.textContent = 'Error verifying email. Please try again.';
+                errorDiv.textContent = 'Error verifying credentials. Please try again.';
                 console.error(error);
             }
         });

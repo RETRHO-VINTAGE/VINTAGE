@@ -26,6 +26,7 @@ const API_KEY = 'AIzaSyASQPliHBF4eIKF1DjCiGYfGzw6lp10kQc';
 const SPREADSHEET_ID = '19U8vB0qAAEgGNpoYpWu0gj09vsElmQ19vhq30ZJHH0A';
 // Range for Active Members emails
 const RANGE = 'Active Members!D2:D';
+const SHARED_PASSWORD = 'retrho25';
 
 function loadGapiClient() {
     return new Promise((resolve, reject) => {
@@ -41,8 +42,12 @@ function loadGapiClient() {
     });
 }
 
-async function verifyEmail(email) {
+async function verifyEmail(email, password) {
     try {
+        // Check password first
+        if (password !== SHARED_PASSWORD) {
+          return false;
+        }
         // Initialize gapi client if not already
         if (!gapi.client || !gapi.client.sheets) {
             await loadGapiClient();
