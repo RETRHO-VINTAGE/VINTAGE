@@ -160,6 +160,7 @@ button {
     color: white;
     text-shadow: 3px 3px 10px rgba(0,0,0,0.7);
 }
+
 /* Footer styling */
 footer {
     text-align: center;
@@ -268,13 +269,15 @@ footer a:hover {
 
 .slide-in-left img,
 .slide-in-right img {
-    max-width: 180px;
-    max-height: 180px;
+    max-width: 300px;
+    max-height: 250px;
     width: auto;
     height: auto;
     object-fit: contain;
     border-radius: 10px;
 }
+
+
 
 .slide-in-left img {
     margin-left: 40px;

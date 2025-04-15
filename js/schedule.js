@@ -185,7 +185,7 @@ function generateShift(data, currentObsNight, date, parent){
                     shiftWrap.appendChild(shift);
                 }
                 else{
-                    htmlInjection += '<div class="shiftEmpty shift2" ><b>Shift 2:</b> NO SNR OBSERVER</div>';
+                    //htmlInjection += '<div class="shiftEmpty shift2" ><b>Shift 2:</b> NO SNR OBSERVER</div>';
                     const shift = document.createElement('div');
                     shift.classList.add("shiftEmpty");
                     shift.classList.add("shift2");
