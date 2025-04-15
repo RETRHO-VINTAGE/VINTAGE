@@ -35,6 +35,7 @@
         <img src="images/m42.png" class="portalTitleImage">
         <p class="portalTitleText">Explore Data</p>
     </div>
+
     <!--search portal- includes search bar and table-->
     <div class="searchPortal">
         <input id="inputForm" type="text" placeholder="search objects...">
@@ -56,29 +57,29 @@
                 Reduced Only
             </label>
         </div>
+        
         <table id="dataTable">
-            <tr class="tableHeader">
-                <th>Object Name</th>
-                <th>Object Type</th>
-                <th>Date Observed</th>
-                <th>Filters</th>
-                <th>Exposure Time &#91;s&#93;</th>
-                <th>RA</th>
-                <th>DEC</th>
-                <th>Reduced</th>
-            </tr>
-            <!--<tr class="tableData">
-                <td>sampleName</td>
-                <td>supernovae</td>
-                <td>DD-MM-YYYY 2am</td>
-                <td>BGR</td>
-                <td>200</td>
-                <td>12:33:44.22</td>
-                <td>05:22:89.22</td>
-                <td>No</td> 
-            </tr>-->
+            <thead>
+                <tr class="tableHeader">
+                    <th>Object Name</th>
+                    <th>Object Type</th>
+                    <th>Date Observed</th>
+                    <th>Filters</th>
+                    <th>Exposure Time &#91;s&#93;</th>
+                    <th>RA</th>
+                    <th>DEC</th>
+                    <th>Reduced</th>
+                </tr>
+            </thead>
+            <tbody id="tableBody">
+                <!-- Data rows will be dynamically inserted here -->
+            </tbody>
         </table>
+
+        <!-- Pagination controls -->
+        <div id="pagination" class="pagination-controls"></div>
     </div>
+
     <footer>
         <p>Contact us: 
             <a href="mailto:uf.retrho@gmail.com">uf.retrho@gmail.com</a>
