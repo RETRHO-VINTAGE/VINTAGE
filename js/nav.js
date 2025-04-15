@@ -1,52 +1,50 @@
+console.log('nav.js loaded');
+
+const oldelem = document.querySelector("script#replace_with_navbar");
+if (!oldelem) {
+    console.error('Placeholder script#replace_with_navbar not found');
+} else {
+    console.log('Placeholder found');
+}
+
 fetch('nav.html')
-.then(res => res.text())
-.then(text => {
-    let oldelem = document.querySelector("script#replace_with_navbar");
-    let newelem = document.createElement("div");
-    newelem.innerHTML = text;
-    oldelem.parentNode.replaceChild(newelem,oldelem);
-})
+    .then(res => {
+        if (!res.ok) throw new Error(`HTTP error ${res.status}`);
+        return res.text();
+    })
+    .then(text => {
+        let newelem = document.createElement("div");
+        newelem.innerHTML = text;
+        oldelem.parentNode.replaceChild(newelem, oldelem);
+        console.log('nav.html inserted');
+        document.dispatchEvent(new Event('navbarLoaded'));
+    })
+    .catch(err => console.error('Error loading nav.html:', err));
 
 function openLoginModal() {
-    document.getElementById('loginModal').style.display = 'block';
-    document.getElementById('loginForm').addEventListener('submit', validateLogin);
+    const modal = document.getElementById('loginModal');
+    if (modal) {
+        modal.style.display = 'block';
+        console.log('Login modal opened');
+    } else {
+        console.error('Login modal not found');
+    }
 }
 
-// Function to close the login modal
 function closeLoginModal() {
-    document.getElementById('loginModal').style.display = 'none';
+    const modal = document.getElementById('loginModal');
+    if (modal) {
+        modal.style.display = 'none';
+        console.log('Login modal closed');
+    } else {
+        console.error('Login modal not found');
+    }
 }
 
-// Close the modal if clicked outside of it
 window.onclick = function(event) {
     const modal = document.getElementById('loginModal');
     if (event.target == modal) {
         modal.style.display = 'none';
+        console.log('Modal closed by clicking outside');
     }
-}
-
-
-let users = {};
-function validateLogin(event) {
-    event.preventDefault();
-
-    const email = document.getElementById("loginUsername").value.trim();
-    const password = document.getElementById("loginPassword").value.trim();
-    const errorMsg = document.getElementById("loginError");
-
-    firebase.auth().signInWithEmailAndPassword(email, password)
-        .then((userCredential) => {
-            // Login successful
-            errorMsg.style.color = "green";
-            errorMsg.textContent = "Login successful! Redirecting...";
-            setTimeout(() => {
-                closeLoginModal();
-                window.location.href = "dashboard.html";
-            }, 1500);
-        })
-        .catch((error) => {
-            errorMsg.style.color = "red";
-            errorMsg.textContent = "Incorrect email or password.";
-            console.error("Login failed:", error.message);
-        });
-}
+};

@@ -429,3 +429,10 @@ button[type="submit"]:hover {
     color: #b0c4de;
     opacity: 0.9;
 }
+
+#loginError {
+    color: red;
+    margin-top: 10px;
+    font-size: 0.9em;
+    min-height: 1.5em; /* Reserve space to avoid layout shift */
+}
