@@ -1,52 +1,79 @@
+// Fetch and inject nav.html
 fetch('nav.html')
-.then(res => res.text())
-.then(text => {
-    let oldelem = document.querySelector("script#replace_with_navbar");
-    let newelem = document.createElement("div");
-    newelem.innerHTML = text;
-    oldelem.parentNode.replaceChild(newelem,oldelem);
+.then(response => response.text())
+.then(data => {
+    document.getElementById('replace_with_navbar').outerHTML = data;
+    initializeNavbar();
 })
+.catch(error => console.error('Error loading navbar:', error));
 
-function openLoginModal() {
-    document.getElementById('loginModal').style.display = 'block';
-    document.getElementById('loginForm').addEventListener('submit', validateLogin);
-}
-
-// Function to close the login modal
-function closeLoginModal() {
-    document.getElementById('loginModal').style.display = 'none';
-}
-
-// Close the modal if clicked outside of it
-window.onclick = function(event) {
+function initializeNavbar() {
+// Define modal functions first
+window.openLoginModal = function() {
     const modal = document.getElementById('loginModal');
-    if (event.target == modal) {
-        modal.style.display = 'none';
+    if (modal) {
+        modal.style.display = 'block';
+    }
+};
+
+window.closeLoginModal = function() {
+    const modal = document.getElementById('loginModal');
+    const form = document.getElementById('loginForm');
+    const errorDiv = document.getElementById('loginError');
+    if (modal) modal.style.display = 'none';
+    if (form) form.reset();
+    if (errorDiv) errorDiv.textContent = '';
+};
+
+// Now update navbar
+updateNavbar();
+
+// Set up form submission
+const loginForm = document.getElementById('loginForm');
+if (loginForm) {
+    loginForm.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        const email = document.getElementById('loginEmail').value.trim();
+        const errorDiv = document.getElementById('loginError');
+
+        try {
+            const isAuthorized = await verifyEmail(email);
+            if (isAuthorized) {
+                errorDiv.style.color = '#22884c'; // gatorGreen
+                errorDiv.textContent = 'Login successful!';
+                localStorage.setItem('userEmail', email);
+                setTimeout(window.closeLoginModal, 1000);
+                updateNavbar();
+            } else {
+                errorDiv.style.color = '#D32737'; // bottlebrushRed
+                errorDiv.textContent = 'Email not authorized.';
+            }
+        } catch (error) {
+            errorDiv.style.color = '#D32737';
+            errorDiv.textContent = 'Error verifying email. Please try again.';
+            console.error(error);
+        }
+    });
+}
+}
+
+function updateNavbar() {
+const loginButton = document.querySelector('.loginButton');
+const restrictedLinks = document.querySelectorAll('.navbarPage.restricted');
+const userEmail = localStorage.getItem('userEmail');
+
+if (loginButton) {
+    if (userEmail) {
+        loginButton.textContent = `Logout (${userEmail})`;
+        loginButton.onclick = () => {
+            localStorage.removeItem('userEmail');
+            window.location.reload();
+        };
+        restrictedLinks.forEach(link => link.style.display = 'inline');
+    } else {
+        loginButton.textContent = 'Login';
+        loginButton.onclick = window.openLoginModal;
+        restrictedLinks.forEach(link => link.style.display = 'none');
     }
 }
-
-
-let users = {};
-function validateLogin(event) {
-    event.preventDefault();
-
-    const email = document.getElementById("loginUsername").value.trim();
-    const password = document.getElementById("loginPassword").value.trim();
-    const errorMsg = document.getElementById("loginError");
-
-    firebase.auth().signInWithEmailAndPassword(email, password)
-        .then((userCredential) => {
-            // Login successful
-            errorMsg.style.color = "green";
-            errorMsg.textContent = "Login successful! Redirecting...";
-            setTimeout(() => {
-                closeLoginModal();
-                window.location.href = "dashboard.html";
-            }, 1500);
-        })
-        .catch((error) => {
-            errorMsg.style.color = "red";
-            errorMsg.textContent = "Incorrect email or password.";
-            console.error("Login failed:", error.message);
-        });
 }

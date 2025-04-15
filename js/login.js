@@ -20,16 +20,49 @@
 // fetchLoginData();
 // === Initialize Firebase ===
 // === Initialize Firebase ===
-const firebaseConfig = {
-    apiKey: "AIzaSyC3PBpEbNb1qTfpSG5IEH7Ua4pxhsPO1LU",
-    authDomain: "vintagewebsite.firebaseapp.com",
-    projectId: "vintagewebsite",
-    storageBucket: "vintagewebsite.firebasestorage.app",
-    messagingSenderId: "486200621061",
-    appId: "1:486200621061:web:2be152fbef848aa7fe046c",
-    measurementId: "G-546SQFX7JJ"
-  };
-  
-  // Initialize Firebase
-  firebase.initializeApp(firebaseConfig);
-  const auth = firebase.auth();
+// Google Sheets API key
+const API_KEY = 'AIzaSyASQPliHBF4eIKF1DjCiGYfGzw6lp10kQc';
+// Google Sheet ID for RETRHOster
+const SPREADSHEET_ID = '19U8vB0qAAEgGNpoYpWu0gj09vsElmQ19vhq30ZJHH0A';
+// Range for Active Members emails
+const RANGE = 'Active Members!D2:D';
+
+function loadGapiClient() {
+    return new Promise((resolve, reject) => {
+        gapi.load('client', () => {
+            gapi.client
+                .init({
+                    apiKey: API_KEY,
+                    discoveryDocs: ['https://sheets.googleapis.com/$discovery/rest?version=v4'],
+                })
+                .then(resolve)
+                .catch(reject);
+        });
+    });
+}
+
+async function verifyEmail(email) {
+    try {
+        // Initialize gapi client if not already
+        if (!gapi.client || !gapi.client.sheets) {
+            await loadGapiClient();
+        }
+
+        // Fetch data from Google Sheets
+        const response = await gapi.client.sheets.spreadsheets.values.get({
+            spreadsheetId: SPREADSHEET_ID,
+            range: RANGE,
+        });
+
+        // Extract emails
+        const emails = response.result.values
+            ? response.result.values.flat().map((e) => e.toLowerCase().trim())
+            : [];
+
+        // Check if email exists
+        return emails.includes(email.toLowerCase().trim());
+    } catch (error) {
+        console.error('Error fetching Google Sheets data:', error);
+        throw error;
+    }
+}
