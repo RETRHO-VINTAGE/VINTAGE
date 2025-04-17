@@ -166,10 +166,10 @@
     border-radius: 20px 0 0 0;
     border-right: 1px solid #343741;
     border-left: none;
-    width: 15%;
+    width: 5%;
 }
 .searchPortal th:nth-child(2){
-    width: 5%;
+    width: 15%;
 }
 .searchPortal th:nth-child(3){
     width: 15%;
