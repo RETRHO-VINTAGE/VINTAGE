@@ -37,7 +37,7 @@ function filterOnEnter() {
     let queryParts = [];
 
     if (radioObj.checked && searchText) {
-        queryParts.push(`LOWER(A) CONTAINS LOWER('${searchText}')`);
+        queryParts.push(`LOWER(B) CONTAINS LOWER('${searchText}')`);
     } else if (radioType.checked && searchText) {
         //date range
         const dates = searchText.split(/\s*,\s/); //splits by comma and space
@@ -116,7 +116,7 @@ function filterOnEnter() {
     }
     else if(radioCoords.checked){
         instructions.style.display = "block";
-        instructions.innerHTML = "Format Coordinats as RA, DEC; as \"HH MM SS, DD MM SS\". There must be a space between RA and DEC. Decimals are permitted for seconds. An example is: \"12 25 48.28, 33 32 47\".";
+        instructions.innerHTML = "Format Coordinates as RA, DEC; as \"HH MM SS, DD MM SS\". There must be a space between RA and DEC. Decimals are permitted for seconds. An example is: \"12 25 48.28, 33 32 47\".";
     }
 
     if (reducedOnly) {
@@ -172,8 +172,8 @@ function showPage(page) {
         tr.classList.add("tableData");
 
         const fields = [
+            "Selected",
             "Object Name",
-            "Object Type",
             "Date Observed",
             "Filters",
             "Exposure Time [s]",
