@@ -282,9 +282,9 @@ submitEmail.addEventListener("submit", (e) => {
     e.preventDefault();
     const email = "hluft1204@gmail.com"; //Email that will get the request 
     const userEmail = document.getElementById("userEmail").value;
-    const selectedCodes = document.getElementById("selectedCodes").value;
+    //const selectedCodes = document.getElementById("selectedCodes").value;
 
-    if (!userEmail || !selectedCodes) {
+    if (!userEmail) {
         alert("Please fill in both your email and the selected image codes.");
         return false;
     }
@@ -294,8 +294,10 @@ submitEmail.addEventListener("submit", (e) => {
     for(let i=0; i<selected.length; i++){
         listofSelected += selected.at(i) + "\n";
     }
-    const body = `User Email: ${userEmail} \nSelected Image Codes: ${listofSelected}`;
+    const body = `User Email: ${userEmail} \nSelected Image Codes: \n${listofSelected}`;
     console.log(body);
+
+    //TODO: have the list pop up for them to verify, then send it to a sheets for email 
 
     const mailtoLink = `mailto:${email}?subject=${encodeURIComponent(subject)}&body=${body}`;
     window.location.href = mailtoLink;
