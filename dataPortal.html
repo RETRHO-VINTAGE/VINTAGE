@@ -72,14 +72,14 @@
     <!-- Request Form -->
     <div class="requestForm">
         <h2>Request Image Codes</h2>
-        <form id="requestForm" onsubmit="return submitForm()">
+        <form id="requestForm"> <!-- onsubmit="return submitForm()"-->
             <label for="userEmail">Your Email:</label><br>
             <input type="email" id="userEmail" name="userEmail" required><br><br>
 
             <label for="selectedCodes">Selected Image Codes:</label><br>
             <input type="text" id="selectedCodes" name="selectedCodes"><br><br>
 
-            <input type="submit" value="Send Request">
+            <input type="submit" id="submitbutton" value="Send Request">
         </form>
     </div>
 
@@ -90,9 +90,9 @@
         <p>&copy; 2025 RETRHO. All rights reserved.</p>
     </footer>
 
-    <script>
+    <!--<script>
         function submitForm() {
-            const email = "shreya.kota17@gmail.com"; //Email that will get the request 
+            const email = "hluft1204@gmail.com"; //Email that will get the request 
             const userEmail = document.getElementById("userEmail").value;
             const selectedCodes = document.getElementById("selectedCodes").value;
 
@@ -108,7 +108,7 @@
             window.location.href = mailtoLink;
             return false; 
         }
-    </script>
+    </script>-->
 
 </body>
 </html>

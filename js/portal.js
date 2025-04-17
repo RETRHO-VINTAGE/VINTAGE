@@ -11,6 +11,7 @@ const instructions = document.getElementById("formatDirections");
 let currentPage = 1;
 const rowsPerPage = 20;
 let currentData = [];
+let selected = [];
 
 // Load first 20 rows when page loads
 window.addEventListener("DOMContentLoaded", () => {
@@ -48,7 +49,7 @@ function filterOnEnter() {
         console.log(endDate);
         let validStart = false;
         let validEnd = false;
-        //TODO: format the dates- MUST be in YYYY-MM-DD
+        //format the dates- MUST be in YYYY-MM-DD
 
         if(!(/\d{4}-((0\d)|(1[12]))-(([012]\d)|[3][01])/.test(startDate))){
             console.log("invalid format");
@@ -166,6 +167,7 @@ function showPage(page) {
     const start = (page - 1) * rowsPerPage;
     const end = start + rowsPerPage;
     const pageData = currentData.slice(start, end);
+    console.log(pageData);
 
     pageData.forEach(item => {
         const tr = document.createElement("tr");
@@ -184,7 +186,45 @@ function showPage(page) {
 
         fields.forEach(field => {
             const td = document.createElement("td");
-            td.textContent = item[field] || "";
+            //console.log(field);
+            if(field === "Selected"){
+                let location = item["Location / file path"];
+
+                const checkdiv = document.createElement("div");
+                const checkbox = document.createElement("INPUT");
+                checkbox.setAttribute("type", "checkbox");
+                checkdiv.classList.add("select");
+
+                //check if the item exists in the selected array already- make it checked if so
+                if(selected.includes(location)){
+                    checkbox.checked = true;
+                }
+
+                checkdiv.appendChild(checkbox);
+                td.appendChild(checkdiv);
+                //add event listener
+                checkbox.addEventListener("change", function(e) {
+                    if(checkbox.checked){
+                        console.log(location);
+                        //check if already in the list, otherwise push it 
+                        if(!selected.includes(location)){
+                            selected.push(location);
+                        }
+                    }
+                    else{
+                        console.log("unchecked");
+                        //remove from the list
+                        if(selected.includes(location)){
+                            const indextoDelete = selected.indexOf(location);
+                            selected.splice(indextoDelete, 1);
+                        }
+                    }
+                    console.log(selected);
+                });
+            }
+            else{
+                td.textContent = item[field] || "";
+            }
             tr.appendChild(td);
         });
 
@@ -235,3 +275,29 @@ function setupPaginationControls() {
     paginationDiv.appendChild(nextBtn);
 }
  
+
+//TODO: on send request, email request
+const submitEmail = document.getElementById("requestForm");
+submitEmail.addEventListener("submit", (e) => {
+    e.preventDefault();
+    const email = "hluft1204@gmail.com"; //Email that will get the request 
+    const userEmail = document.getElementById("userEmail").value;
+    const selectedCodes = document.getElementById("selectedCodes").value;
+
+    if (!userEmail || !selectedCodes) {
+        alert("Please fill in both your email and the selected image codes.");
+        return false;
+    }
+
+    const subject = "Image Code Request";
+    let listofSelected = "";
+    for(let i=0; i<selected.length; i++){
+        listofSelected += selected.at(i) + "\n";
+    }
+    const body = `User Email: ${userEmail} \nSelected Image Codes: ${listofSelected}`;
+    console.log(body);
+
+    const mailtoLink = `mailto:${email}?subject=${encodeURIComponent(subject)}&body=${body}`;
+    window.location.href = mailtoLink;
+    return false; 
+});
