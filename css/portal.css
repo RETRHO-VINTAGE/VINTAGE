@@ -235,4 +235,54 @@
     cursor: not-allowed;
 }
 
- 
+.requestForm {
+    width: 100%;
+    max-width: 500px; 
+    margin: 30px auto; /* Centering the form */
+    padding: 15px;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    font-family: Arial, sans-serif;
+}
+
+.requestForm h2 {
+    text-align: center;
+    color: #333;
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.requestForm label {
+    font-size: 13px;
+    color: #333;
+    margin-bottom: 5px;
+    display: block;
+}
+
+.requestForm input[type="email"],
+.requestForm input[type="text"] {
+    width: 100%;
+    padding: 6px; 
+    margin: 8px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+    height: 30px; 
+}
+
+.requestForm input[type="submit"] {
+    width: 100%;
+    padding: 6px;
+    margin-top: 10px;
+    background-color:#002657;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 14px;
+    height: 35px; 
+}
+
+.requestForm input[type="submit"]:hover {
+    background-color: #0021A5;
+}
