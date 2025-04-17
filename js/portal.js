@@ -290,6 +290,7 @@ submitEmail.addEventListener("submit", (e) => {
     }
 
     const subject = "Image Code Request";
+    //TODO: properly format email 
     let listofSelected = "";
     for(let i=0; i<selected.length; i++){
         listofSelected += selected.at(i) + "\n";
@@ -297,7 +298,7 @@ submitEmail.addEventListener("submit", (e) => {
     const body = `User Email: ${userEmail} \nSelected Image Codes: \n${listofSelected}`;
     console.log(body);
 
-    //TODO: have the list pop up for them to verify, then send it to a sheets for email 
+    //TODO: have the list pop up for them to verify, then send it to a sheets for email- verify by image name NOT location path
 
     const mailtoLink = `mailto:${email}?subject=${encodeURIComponent(subject)}&body=${body}`;
     window.location.href = mailtoLink;
