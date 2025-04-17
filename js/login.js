@@ -1,5 +1,5 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/11.6.0/firebase-app.js";
-import { getAuth, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/11.6.0/firebase-auth.js";
+import { getAuth, signInWithEmailAndPassword, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/11.6.0/firebase-auth.js";
 
 console.log('login.js loaded');
 
@@ -13,9 +13,24 @@ const firebaseConfig = {
     measurementId: "G-546SQFX7JJ"
 };
 
-// Initialize Firebase
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
+
+// Expose Firebase for nav.js
+window.firebase = { auth: () => auth };
+
+// Global login state
+window.isLoggedIn = false;
+
+function dispatchLoginStateChange() {
+    window.isLoggedIn = auth.currentUser !== null;
+    console.log('Dispatching login state change, isLoggedIn:', window.isLoggedIn);
+    document.dispatchEvent(new Event('loginStateChanged'));
+}
+
+onAuthStateChanged(auth, user => {
+    dispatchLoginStateChange();
+});
 
 function setupLogin() {
     const loginForm = document.getElementById('loginForm');
@@ -24,29 +39,26 @@ function setupLogin() {
     if (loginForm && errorDiv && submitButton) {
         console.log('Login form, error div, and submit button found');
         loginForm.addEventListener('submit', (event) => {
-            console.log('Form submit event triggered');
-            event.preventDefault(); // Prevent page refresh
-
+            event.preventDefault();
             const email = document.getElementById('loginUsername').value;
             const password = document.getElementById('loginPassword').value;
-            console.log('Attempting login with:', email);
-
-            // Clear previous error and disable button
             errorDiv.textContent = '';
             submitButton.disabled = true;
-
             signInWithEmailAndPassword(auth, email, password)
                 .then((userCredential) => {
-                    // Login successful
                     console.log('Login successful for:', userCredential.user.email);
-                    loginForm.reset(); // Clear form
+                    loginForm.reset();
                     document.getElementById('loginModal').style.display = 'none';
-                    window.location.href = 'index.html'; // Redirect
+                    // Ensure isLoggedIn updates before redirect
+                    window.isLoggedIn = true;
+                    dispatchLoginStateChange();
+                    setTimeout(() => {
+                        window.location.href = 'index.html';
+                    }, 100); // Brief delay for navbar update
                 })
                 .catch((error) => {
                     console.error('Login error:', error.code, error.message);
-                    loginForm.reset(); // Clear form
-                    // Handle specific errors
+                    loginForm.reset();
                     if (error.code === 'auth/invalid-credential' || 
                         error.code === 'auth/user-not-found' || 
                         error.code === 'auth/wrong-password') {
@@ -55,9 +67,7 @@ function setupLogin() {
                         errorDiv.textContent = 'Login failed: ' + error.message;
                     }
                 })
-                .finally(() => {
-                    submitButton.disabled = false; // Re-enable button
-                });
+                .finally(() => submitButton.disabled = false);
         });
     } else {
         console.log('Login form, error div, or submit button not found, retrying...');

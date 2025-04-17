@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <head>
     <link rel="icon" type="image/x-icon" href="images/icon.ico">
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
     <div class="navbar">
@@ -11,13 +12,12 @@
         <a href="portfolio.html" class="navbarPage">Portfolio</a>
         <a href="dataPortal.html" class="navbarPage">Explore Data</a>
         <a href="request_targets.html" class="navbarPage">Request Targets</a>
-        <a href="observingSchedule.html" class="navbarPage">Observation Schedule</a>
-        <a href="observingResources.html" class="navbarPage">Observation Resources</a>
-        <a href="resources.html" class="navbarPage">Resources</a>
+        <a href="observingSchedule.html" class="navbarPage auth-required">Observation Schedule</a>
+        <a href="observingResources.html" class="navbarPage auth-required">Observation Resources</a>
+        <a href="resources.html" class="navbarPage auth-required">Resources</a>
         <a href="contact.html" class="navbarPage">Contact Us/FAQ</a>
-        <button class="loginButton" onclick="openLoginModal()">Login</button>
+        <button id="loginButton" class="loginButton">Login</button>
 
-        <!-- Login Modal -->
         <div id="loginModal" class="modal">
             <div class="modal-content">
                 <span class="close" onclick="closeLoginModal()">×</span>
