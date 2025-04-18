@@ -16,19 +16,8 @@
     <script type="module" src="js/portal.js"></script>
     <script type="module" src="js/login.js" defer></script>
 </head>
-<body>
+<body> 
     <!-- Navigation Bar -->
-    <!--<div class="navbar">
-        <a href="index.html" class="navbarLogo">
-            <img src="images/RETRHOlogo_official.png" alt="Logo" class="logo">
-        </a>
-        <a href="telescope.html" class="navbarPage">Telescope</a>
-        <a href="portfolio.html" class="navbarPage">Portfolio</a>
-        <a href="dataPortal.html" class="navbarPage">Explore Data</a>
-        <a href="request_targets.html" class="navbarPage">Request Targets</a>
-        <a href="contact.html" class="navbarPage">Contact US/FAQ</a>
-        <a href="#" class="navbarPage">Login</a>
-    </div>-->
     <div id="navbar_container"></div>
 
 
@@ -37,9 +26,10 @@
         <img src="images/m42.png" class="portalTitleImage">
         <p class="portalTitleText">Explore Data</p>
     </div>
+
     <!--search portal- includes search bar and table-->
     <div class="searchPortal">
-        <input type="text" placeholder="search objects...">
+        <input id="inputForm" type="text" placeholder="search objects...">
         <div class="searchTypes">
             <label>
                 <input type="radio" id="objName" name="filterOpt" value="objectName" checked="true">
@@ -47,7 +37,7 @@
             </label>
             <label>
                 <input type="radio" id="objType" name="filterOpt" value="objectType" checked="false">
-                Object Type
+                Date Range
             </label>
             <label>
                 <input type="radio" id="coords" name="filterOpt" value="objectCoords" checked="false">
@@ -58,39 +48,43 @@
                 Reduced Only
             </label>
         </div>
+        <div id="formatDirections" class="formatDirections">Instructions</div>
+        
         <table id="dataTable">
-            <tr class="tableHeader">
-                <th>Object Name</th>
-                <th>Object Type</th>
-                <th>Date Observed</th>
-                <th>Filters</th>
-                <th>Exposure Time &#91;s&#93;</th>
-                <th>RA</th>
-                <th>DEC</th>
-                <th>Reduced</th>
-            </tr>
-            <tr class="tableData">
-                <td>sampleName</td>
-                <td>supernovae</td>
-                <td>DD-MM-YYYY 2am</td>
-                <td>BGR</td>
-                <td>200</td>
-                <td>12:33:44.22</td>
-                <td>05:22:89.22</td>
-                <td>No</td>
-            </tr>
-            <tr class="tableData">
-                <td>sampleName</td>
-                <td>supernovae</td>
-                <td>DD-MM-YYYY 2am</td>
-                <td>BGR</td>
-                <td>200</td>
-                <td>12:33:44.22</td>
-                <td>05:22:89.22</td>
-                <td>No</td>
-            </tr>
+            <thead>
+                <tr class="tableHeader">
+                    <th>Selected</th>
+                    <th>Object Name</th>
+                    <th>Date Observed</th>
+                    <th>Filters</th>
+                    <th>Exposure Time &#91;s&#93;</th>
+                    <th>RA</th>
+                    <th>DEC</th>
+                    <th>Reduced</th>
+                </tr>
+            </thead>
+            <tbody id="tableBody">
+            </tbody>
         </table>
+
+        <!-- Pagination controls -->
+        <div id="pagination" class="pagination-controls"></div>
     </div>
+
+    <!-- Request Form -->
+    <!--<div class="requestForm">
+        <h2>Request Image Codes</h2>
+        <form id="requestForm" onsubmit="return submitForm()">
+            <label for="userEmail">Your Email:</label><br>
+            <input type="email" id="userEmail" name="userEmail" required><br><br>
+
+            <label for="selectedCodes">Selected Image Codes:</label><br>
+            <input type="text" id="selectedCodes" name="selectedCodes"><br><br>
+
+            <input type="submit" value="Send Request">
+        </form>
+    </div>-->
+
     <footer>
         <p>Contact us: 
             <a href="mailto:uf.retrho@gmail.com">uf.retrho@gmail.com</a>
@@ -98,5 +92,25 @@
         <p>&copy; 2025 RETRHO. All rights reserved.</p>
     </footer>
 
+    <script>
+        function submitForm() {
+            const email = "shreya.kota17@gmail.com"; //Email that will get the request 
+            const userEmail = document.getElementById("userEmail").value;
+            const selectedCodes = document.getElementById("selectedCodes").value;
+
+            if (!userEmail || !selectedCodes) {
+                alert("Please fill in both your email and the selected image codes.");
+                return false;
+            }
+
+            const subject = "Image Code Request";
+            const body = `User Email: ${userEmail}%0D%0ASelected Image Codes: ${selectedCodes}`;
+
+            const mailtoLink = `mailto:${email}?subject=${encodeURIComponent(subject)}&body=${body}`;
+            window.location.href = mailtoLink;
+            return false; 
+        }
+    </script>
+
 </body>
-</html> 
+</html>

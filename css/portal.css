@@ -43,7 +43,7 @@
     width: 90%;
     display: grid;
     grid-template-columns: 1fr auto;
-    grid-template-rows: auto 1fr;
+    grid-template-rows: 50px auto 1fr;
     row-gap: 20px;
     column-gap: 10px;
     margin: auto;
@@ -68,12 +68,23 @@
     border: 2px solid #FA4616;
 }
 
+.formatDirections{
+    background-color: #343741;
+    border: none;
+    border-radius: 10px;
+    padding-top: 10px;
+    padding-left: 10px;
+    text-align: left;
+    display: none;
+    font-weight: normal;
+}
+
 /*checkboxes for types of search*/
 .searchTypes{
     min-width: 160px;
     /*background-color: #0021A5;*/
     grid-column: 2;
-    grid-row: 1;
+    grid-row: span 2;
     display: flexbox;
     flex-direction: column;
     border: 2px solid #D32737;
@@ -113,11 +124,11 @@
     font-size: 18;
     border-radius: 20px;
     border: none;
-    height: 50vw;
+    max-height: 50vw;
     color: black;
 }
 /*.searchPortal table, th, tr, td{
-
+ 
     /*border-collapse: collapse;
     border-radius: 20px;
     border: 1px solid darkgray;
@@ -133,26 +144,55 @@
     font-family: "Oswald", sans-serif;
     background-color: #FA4616;
     color: black;
-    height: 30px;
+    height: 40px;
     border-left: 1px solid #343741;
     border-right: 1px solid #343741;
     /*border-radius: 20px 20px 0 0;
     height: 30px;
     border-top: none;*/
 }
+.searchPortal tr{
+    min-height: 40px;
+    max-height: 50px;
+}
+.searchPortal tr:nth-child(even){
+    background-color: #D8D4D7;
+}
+.searchPortal tr:nth-child(odd){
+    background-color: #C7C9C8;
+}
+
 .searchPortal th:first-of-type{
     border-radius: 20px 0 0 0;
     border-right: 1px solid #343741;
     border-left: none;
+    width: 5%;
+}
+.searchPortal th:nth-child(2){
+    width: 15%;
+}
+.searchPortal th:nth-child(3){
+    width: 15%;
+}
+.searchPortal th:nth-child(4){
+    width: 8%;
+}
+.searchPortal th:nth-child(5){
+    width: 8%;
+}
+.searchPortal th:nth-child(6){
+    width: 21%;
 }
 .searchPortal th:last-of-type{
     border-radius: 0 20px 0 0;
     border-left: 1px solid #343741;
     border-right: none;
+    width: 7%;
+    
 }
 .searchPortal td{
     border: 1px solid #343741;
-    background-color: #C7C9C8;
+    /*background-color: #C7C9C8;*/
 }
 .searchPortal tr:last-of-type td:first-of-type{
     border-radius: 0 0 0 20px;
@@ -171,3 +211,78 @@
     border-right: none;
 }
 
+
+.pagination-controls {
+    text-align: center; 
+    margin-top: 1rem;
+    transform: translateX(30px); 
+}
+
+.pagination-controls button {
+    background-color: #1e1e2f;
+    color: #fff;
+    border: none;
+    padding: 8px 12px;
+    margin: 0 4px;
+    border-radius: 4px;
+    font-family: "Exo 2", sans-serif;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.pagination-controls button:disabled {
+    background-color: #FA4616;
+    cursor: not-allowed;
+}
+
+.requestForm {
+    width: 100%;
+    max-width: 500px; 
+    margin: 30px auto; /* Centering the form */
+    padding: 15px;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    font-family: Arial, sans-serif;
+}
+
+.requestForm h2 {
+    text-align: center;
+    color: #333;
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.requestForm label {
+    font-size: 13px;
+    color: #333;
+    margin-bottom: 5px;
+    display: block;
+}
+
+.requestForm input[type="email"],
+.requestForm input[type="text"] {
+    width: 100%;
+    padding: 6px; 
+    margin: 8px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+    height: 30px; 
+}
+
+.requestForm input[type="submit"] {
+    width: 100%;
+    padding: 6px;
+    margin-top: 10px;
+    background-color:#002657;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 14px;
+    height: 35px; 
+}
+
+.requestForm input[type="submit"]:hover {
+    background-color: #0021A5;
+}
