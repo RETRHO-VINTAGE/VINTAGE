@@ -1,5 +1,5 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/11.6.0/firebase-app.js";
-import { getAuth, signInWithEmailAndPassword, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/11.6.0/firebase-auth.js";
+import { getAuth, signInWithEmailAndPassword, onAuthStateChanged, signOut } from "https://www.gstatic.com/firebasejs/11.6.0/firebase-auth.js";
 
 console.log('login.js loaded');
 
@@ -16,20 +16,102 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 
-// Expose Firebase for nav.js
-window.firebase = { auth: () => auth };
+function updateNavbar(isLoggedIn) {
+    console.log('Updating navbar, isLoggedIn:', isLoggedIn);
+    fetch('nav.html')
+        .then(res => {
+            if (!res.ok) throw new Error(`HTTP error ${res.status}`);
+            return res.text();
+        })
+        .then(text => {
+            const parser = new DOMParser();
+            const doc = parser.parseFromString(text, 'text/html');
+            const navbar = doc.querySelector('.navbar');
+            if (!navbar) {
+                console.error('Navbar not found in nav.html');
+                return;
+            }
 
-// Global login state
-window.isLoggedIn = false;
+            // Remove auth-required links if not logged in
+            if (!isLoggedIn) {
+                navbar.querySelectorAll('.auth-required').forEach(link => link.remove());
+            }
 
-function dispatchLoginStateChange() {
-    window.isLoggedIn = auth.currentUser !== null;
-    console.log('Dispatching login state change, isLoggedIn:', window.isLoggedIn);
-    document.dispatchEvent(new Event('loginStateChanged'));
+            // Update login/logout button
+            const loginButton = navbar.querySelector('#loginButton');
+            if (loginButton) {
+                loginButton.textContent = isLoggedIn ? 'Log Out' : 'Login';
+                loginButton.onclick = isLoggedIn ? () => {
+                    console.log('Log Out clicked');
+                    signOut(auth)
+                        .then(() => {
+                            console.log('User logged out');
+                            updateNavbar(false);
+                            window.location.href = 'index.html';
+                        })
+                        .catch(error => console.error('Logout error:', error.message));
+                } : openLoginModal;
+            }
+
+            // Insert navbar
+            const container = document.querySelector("#navbar_container");
+            if (!container) {
+                console.error('Navbar container #navbar_container not found');
+                return;
+            }
+            container.innerHTML = '';
+            container.appendChild(navbar);
+            console.log('nav.html inserted');
+
+            // Update spacing
+            navbar.classList.toggle('logged-out', !isLoggedIn);
+
+            // Trigger login form setup
+            setupLogin();
+        })
+        .catch(err => console.error('Error loading nav.html:', err));
 }
 
+function openLoginModal() {
+    const modal = document.getElementById('loginModal');
+    if (modal) {
+        modal.style.display = 'block';
+        console.log('Login modal opened');
+    } else {
+        console.error('Login modal not found');
+    }
+}
+
+function closeLoginModal() {
+    const modal = document.getElementById('loginModal');
+    if (modal) {
+        modal.style.display = 'none';
+        console.log('Login modal closed');
+    } else {
+        console.error('Login modal not found');
+    }
+}
+
+window.onclick = function(event) {
+    const modal = document.getElementById('loginModal');
+    if (event.target == modal) {
+        modal.style.display = 'none';
+        console.log('Modal closed by clicking outside');
+    }
+};
+
 onAuthStateChanged(auth, user => {
-    dispatchLoginStateChange();
+    const isLoggedIn = !!user;
+    console.log('Auth state changed, isLoggedIn:', isLoggedIn);
+    updateNavbar(isLoggedIn);
+
+    // Protect pages
+    const protectedPages = ['observingSchedule.html', 'observingResources.html', 'resources.html'];
+    const currentPage = window.location.pathname.split('/').pop();
+    if (!isLoggedIn && protectedPages.includes(currentPage)) {
+        console.log('Unauthorized access to protected page, redirecting to index.html');
+        window.location.href = 'index.html';
+    }
 });
 
 function setupLogin() {
@@ -49,12 +131,10 @@ function setupLogin() {
                     console.log('Login successful for:', userCredential.user.email);
                     loginForm.reset();
                     document.getElementById('loginModal').style.display = 'none';
-                    // Ensure isLoggedIn updates before redirect
-                    window.isLoggedIn = true;
-                    dispatchLoginStateChange();
+                    updateNavbar(true);
                     setTimeout(() => {
                         window.location.href = 'index.html';
-                    }, 100); // Brief delay for navbar update
+                    }, 100);
                 })
                 .catch((error) => {
                     console.error('Login error:', error.code, error.message);
@@ -75,7 +155,4 @@ function setupLogin() {
     }
 }
 
-document.addEventListener('navbarLoaded', () => {
-    console.log('navbarLoaded event received');
-    setupLogin();
-});
+// Don't render navbar until auth state is confirmed
