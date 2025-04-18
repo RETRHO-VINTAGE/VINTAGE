@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <head>
     <link rel="icon" type="image/x-icon" href="images/icon.ico">
+    <link rel="stylesheet" href="css/style.css">
 </head>
-
 <body>
     <div class="navbar">
         <a href="index.html" class="navbarLogo">
@@ -12,33 +12,23 @@
         <a href="portfolio.html" class="navbarPage">Portfolio</a>
         <a href="dataPortal.html" class="navbarPage">Explore Data</a>
         <a href="request_targets.html" class="navbarPage">Request Targets</a>
-        <!--<a href="#" class="navbarPage">Login</a>-->
-        <!--logged in only-->
-        <a href="observingSchedule.html" class="navbarPage">Observation Schedule</a>
-        <a href="observingResources.html" class="navbarPage">Observation Resources</a>
-        <a href="resources.html" class="navbarPage">Resources</a>
-
+        <a href="observingSchedule.html" class="navbarPage auth-required">Observation Schedule</a>
+        <a href="observingResources.html" class="navbarPage auth-required">Observation Resources</a>
+        <a href="resources.html" class="navbarPage auth-required">Resources</a>
         <a href="contact.html" class="navbarPage">Contact Us/FAQ</a>
-        <!--change to profile pic or smth when logged in-->
-        <!-- Existing Login Button -->
-        <button class="loginButton" onclick="openLoginModal()">Login</button>
+        <button id="loginButton" class="loginButton">Login</button>
 
-        <!-- Login Modal -->
         <div id="loginModal" class="modal">
             <div class="modal-content">
-                <span class="close" onclick="closeLoginModal()">&times;</span>
+                <span class="close" onclick="closeLoginModal()">×</span>
                 <h2 style="font-weight: bold; font-size: 1.5em; color: black; margin-bottom: 5px;">Login to RETRHO</h2>
                 <form id="loginForm">
                     <input type="text" id="loginUsername" placeholder="Username" required>
                     <input type="password" id="loginPassword" placeholder="Password" required>
-                    <button type="submit">Login</button>
+                    <button type="submit" id="submit">Login</button>
                 </form>
                 <div id="loginError"></div>
             </div>
         </div>
-
     </div>
-    <script src="https://www.gstatic.com/firebasejs/10.0.0/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/10.0.0/firebase-auth.js"></script>
-    <script src="login.js"></script> <!-- This is your firebase-init.js -->
 </body>

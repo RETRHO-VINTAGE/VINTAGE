@@ -1,21 +1,20 @@
-/*colorsss*/
-.coreOrange {color: #FA4616}
-.coreBlue {color: #0021A5}
-.bottlebrushRed {color: #D32737}
-.alachuaYellow {color: #F2A900}
-.gatorGreen {color: #22884c}
-.coreDarkBlue {color: #002657}
-.perennialPurple {color: #6A2A60}
-.coolGrey11 {color: #343741}
-.coolGrey3 {color: #C7C9C8}
-.warmGrey1 {color: #D8D4D7}
+/* Colors */
+.coreOrange { color: #FA4616; }
+.coreBlue { color: #0021A5; }
+.bottlebrushRed { color: #D32737; }
+.alachuaYellow { color: #F2A900; }
+.gatorGreen { color: #22884c; }
+.coreDarkBlue { color: #002657; }
+.perennialPurple { color: #6A2A60; }
+.coolGrey11 { color: #343741; }
+.coolGrey3 { color: #C7C9C8; }
+.warmGrey1 { color: #D8D4D7; }
 
 /* Reset some default styles */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    /*background-color: black;*/
 }
 
 body {
@@ -30,10 +29,8 @@ body {
 header {
     background-color: black;
     color: white;
-    /*padding: 20px;*/
     text-align: center;
 }
-
 
 .navbar {
     background-color: black;
@@ -42,15 +39,14 @@ header {
     flex-direction: row;
     justify-content: space-around;
     align-items: flex-start;
-    /*padding: 10px 0;*/
     height: 70px;
     position: fixed;
     left: 0;
     right: 0;
     top: 0;
     z-index: 101;
-
 }
+
 .navbarPage {
     font-family: "Oswald", sans-serif;
     flex: 1;
@@ -60,26 +56,32 @@ header {
     font-size: 18px;
     text-align: center;
     height: 70px;
-    /*border: 1px solid red;*/
 }
-.navbar .navbarPage:hover{
+
+.navbar.logged-out .navbarPage {
+    flex: 1.2; /* Increase spacing when fewer links */
+}
+
+.navbar .navbarPage:hover {
     background-color: #6A2A60;
     border-radius: 0 0 5px 5px;
 }
-.navbarLogo{
+
+.navbarLogo {
     width: auto;
     min-width: 70px;
     margin: 10px 10px 10px 10px;
-    
 }
+
 .navbarLogo img.logo {
     height: 50px;
     width: auto;
-    margin-right: 2px; 
+    margin-right: 2px;
     border-radius: 50%;
     border: 2px solid #FA4616;
 }
-.loginButton{
+
+.loginButton {
     background-color: #D32737;
     border: none;
     border-radius: 20px;
@@ -90,15 +92,16 @@ header {
     font-family: "Exo 2";
     font-weight: bold;
     transition: 0.2s;
+    padding: 8px 16px;
+    cursor: pointer;
 }
-.loginButton:hover{
+
+.loginButton:hover {
     background-color: #FA4616;
     margin-left: 17px;
     margin-right: 23px;
     margin-top: 8px;
 }
-
-
 
 button {
     padding: 10px 20px;
@@ -117,22 +120,21 @@ button {
     margin: 0;
 }
 
-    .gallery img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        position: absolute;
-        top: 0;
-        left: 0;
-        opacity: 0;
-        transition: opacity 1s ease-in-out;
-        margin: 0;
-    }
+.gallery img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+    margin: 0;
+}
 
-        .gallery img.active {
-            opacity: 1;
-        }
-
+.gallery img.active {
+    opacity: 1;
+}
 
 .gallery-overlay {
     position: absolute;
@@ -141,7 +143,7 @@ button {
     transform: translate(-50%, -50%);
     z-index: 5;
     text-align: center;
-    pointer-events: none; 
+    pointer-events: none;
 }
 
 .gallery-overlay h1 {
@@ -152,16 +154,16 @@ button {
     letter-spacing: 10px;
     margin: 0;
     text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.7);
-    padding: 0; 
-    border: none; /* Ensures no border */
+    padding: 0;
+    border: none;
 }
-.gallery-overlay p{
+
+.gallery-overlay p {
     font-size: 2rem;
     color: white;
     text-shadow: 3px 3px 10px rgba(0,0,0,0.7);
 }
 
-/* Footer styling */
 footer {
     text-align: center;
     padding: 10px;
@@ -172,7 +174,8 @@ footer {
     height: 80px;
     width: 100%;
 }
-footer p{
+
+footer p {
     background-color: #002657;
 }
 
@@ -187,23 +190,22 @@ footer a:hover {
 }
 
 .portfolio-container {
-    
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 40px; 
-    margin-top: 10px; 
-    padding-top: 20px; 
-    padding-bottom: 20px; 
+    gap: 40px;
+    margin-top: 10px;
+    padding-top: 20px;
+    padding-bottom: 20px;
     width: 100%;
     max-width: 100vw;
-    overflow-x: hidden; 
+    overflow-x: hidden;
 }
 
 .slide-in-left,
 .slide-in-right {
-    width: 80vw; 
-    max-width: 100vw; 
+    width: 80vw;
+    max-width: 100vw;
     height: 300px;
     background: #222;
     padding: 40px;
@@ -212,31 +214,32 @@ footer a:hover {
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: center; 
-    border-radius: 80px; 
+    justify-content: center;
+    border-radius: 80px;
     position: relative;
     text-align: center;
 }
 
 .slide-in-left {
-    transform: translateX(calc(-100% - 20px)); 
+    transform: translateX(calc(-100% - 20px));
     border-radius: 0 80px 80px 0;
     align-self: flex-start;
     box-shadow: 
-        3px 0 8px red,    
-        0 -5px 8px red,    
-        0 3px 8px red,     
-        -3px 0 8px red;    
-    opacity: 1;     
+        3px 0 8px red,
+        0 -5px 8px red,
+        0 3px 8px red,
+        -3px 0 8px red;
+    opacity: 1;
 }
 
 .slide-in-right {
     transform: translateX(calc(100% + 20px));
     border-radius: 80px 0 0 80px;
     align-self: flex-end;
-    box-shadow: -3px 0 8px red,     
-                0 -3px 8px red,     
-                0 5px 8px red;      
+    box-shadow: 
+        -3px 0 8px red,
+        0 -3px 8px red,
+        0 5px 8px red;
 }
 
 .show {
@@ -246,20 +249,20 @@ footer a:hover {
 
 .slide-in-left h2,
 .slide-in-right h2 {
-    text-align: center; 
+    text-align: center;
     font-size: 20px;
     margin-bottom: 8px;
-    width: 100%; 
+    width: 100%;
     position: absolute;
     top: 10px;
     left: 50%;
-    transform: translateX(-50%); /
+    transform: translateX(-50%);
 }
 
 .slide-in-left p,
 .slide-in-right p {
     text-align: center;
-    margin-top: 40px; 
+    margin-top: 40px;
     max-width: 60%;
 }
 
@@ -277,8 +280,6 @@ footer a:hover {
     border-radius: 10px;
 }
 
-
-
 .slide-in-left img {
     margin-left: 40px;
 }
@@ -286,11 +287,11 @@ footer a:hover {
 .slide-in-right img {
     margin-right: 40px;
 }
-/* Modal Styles */
+
 .modal {
-    display: none; 
-    position: fixed; 
-    z-index: 200; 
+    display: none;
+    position: fixed;
+    z-index: 200;
     left: 0;
     top: 0;
     width: 100%;
@@ -307,26 +308,28 @@ footer a:hover {
     width: 30%;
     border-radius: 8px;
     text-align: center;
+    position: relative;
 }
 
-.close-button {
-    color: #aaa;
-    float: right;
+.close {
+    color: #343741; /* coolGrey11 */
     font-size: 28px;
     font-weight: bold;
+    position: absolute;
+    top: 8px;
+    right: 12px;
     cursor: pointer;
+    transition: color 0.3s ease;
 }
 
-.close-button:hover, .close-button:focus {
-    color: black;
-    text-decoration: none;
+.close:hover {
+    color: #D32737; /* bottlebrushRed */
 }
 
-/* Form Styles */
 form {
     display: flex;
     flex-direction: column;
-    gap: 10px; /* Adds space between elements */
+    gap: 10px;
     width: 100%;
     align-items: center;
 }
@@ -356,14 +359,13 @@ button[type="submit"]:hover {
     background-color: #FA4616;
 }
 
-/* Outer container for the section */
 #dynamic-section {
     background: linear-gradient(135deg, #0d1b2a, #1b263b);
-    width: 100%; 
-    margin: 0 px; 
-    border-radius: 0; 
+    width: 100%;
+    margin: 0;
+    border-radius: 0;
     box-shadow: none;
-    padding: 50px 10vw; 
+    padding: 50px 10vw;
     color: #fff;
     text-align: center;
     position: relative;
@@ -428,4 +430,11 @@ button[type="submit"]:hover {
     font-size: 1.1em;
     color: #b0c4de;
     opacity: 0.9;
+}
+
+#loginError {
+    color: #D32737;
+    margin-top: 10px;
+    font-size: 0.9em;
+    min-height: 1.5em;
 }
