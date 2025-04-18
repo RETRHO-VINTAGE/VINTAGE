@@ -252,7 +252,7 @@
     max-width: 500px; 
     margin: 30px auto; /* Centering the form */
     padding: 15px;
-    background-color: #fff;
+    background-color: #C7C9C8;
     border-radius: 5px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     font-family: Arial, sans-serif;
@@ -268,7 +268,7 @@
 .requestForm label {
     font-size: 13px;
     color: #333;
-    margin-bottom: 5px;
+    margin-bottom: 0;
     display: block;
 }
 
@@ -276,7 +276,7 @@
 .requestForm input[type="text"] {
     width: 100%;
     padding: 6px; 
-    margin: 8px 0;
+    margin: 5px 0;
     border: 1px solid #ccc;
     border-radius: 4px;
     font-size: 14px;
@@ -297,4 +297,49 @@
 
 .requestForm input[type="submit"]:hover {
     background-color: #0021A5;
+}
+
+
+.confirmPopup{
+    display: none;
+    color: black;
+    background-color: white;
+    border: 3px solid #FA4616;
+    border-radius: 10px;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 20px;
+    padding-top: 40px;
+    width: 40%;
+    z-index: 999;
+}
+.confirmButton{
+    background-color: #002657;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    width: 100px;
+}
+.confirmButton:hover{
+    background-color: #0021A5;
+}
+.popupX{
+    background: none;
+    color: #797979;
+    width: 50px;
+    height: 50px;
+    padding: none;
+    border: none;
+    position: absolute;
+    right: -2px;
+    top: -27px;
+    font-weight: bold;
+    font-size: 20px;
+    z-index: 1003;
+
+}
+.popupX:hover{
+    color: #1d1f24;
 }

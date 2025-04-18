@@ -282,7 +282,10 @@ submitEmail.addEventListener("submit", (e) => {
     e.preventDefault();
     const email = "hluft1204@gmail.com"; //Email that will get the request 
     const userEmail = document.getElementById("userEmail").value;
-    //const selectedCodes = document.getElementById("selectedCodes").value;
+
+    const putUrl = submitEmail.action;
+    console.log(putUrl);
+    
 
     if (!userEmail) {
         alert("Please fill in both your email and the selected image codes.");
@@ -290,17 +293,48 @@ submitEmail.addEventListener("submit", (e) => {
     }
 
     const subject = "Image Code Request";
-    //TODO: properly format email 
+    //properly format email 
     let listofSelected = "";
     for(let i=0; i<selected.length; i++){
         listofSelected += selected.at(i) + "\n";
-    }
-    const body = `User Email: ${userEmail} \nSelected Image Codes: \n${listofSelected}`;
-    console.log(body);
+    };
+
+    //const bodytext = encodeURIComponent(`User Email: ${userEmail} \nSelected Image Codes: \n${listofSelected}`);
+    //console.log(bodytext);
+    const altBodytext = `Requester Email: ${userEmail} \nSelected Image Codes: \n${listofSelected}`;
 
     //TODO: have the list pop up for them to verify, then send it to a sheets for email- verify by image name NOT location path
+    const popupDiv = document.getElementById("confirmPopup");
+    popupDiv.style.display = "block";
+    const popupText = document.getElementById("popupText");
+    popupText.innerHTML = "You have selected " + selected.length + " images. Confirm request?";
+    const popupConfirmButton = document.getElementById("popupButton");
+    const popupClose = document.getElementById("popupX");
+    popupClose.addEventListener("click", (e) => {
+        popupDiv.style.display = "none";
+    });
+    popupConfirmButton.addEventListener("click", (e) => {
+        //TODO: add the list of images, and a confirmation that the request went through. 
+        console.log("clicked confirm");
+        //send the email
+        fetch(putUrl, {
+            redirect: "follow", 
+            method: "POST", 
+            mode: 'cors',
+            body: altBodytext,
+            headers: {
+                'Content-Type': 'text/plain;charset=utf-8',
+            },
+        });
+        popupDiv.style.display = "none"; 
+    });
 
-    const mailtoLink = `mailto:${email}?subject=${encodeURIComponent(subject)}&body=${body}`;
-    window.location.href = mailtoLink;
+
+    /*const mailtoLink = `mailto:${email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    window.location.href = mailtoLink;*/
+
+    //send the POST to the app script to send the email, sending the body of the email
+    
+
     return false; 
 });
