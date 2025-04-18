@@ -66,6 +66,12 @@ function updateNavbar(isLoggedIn) {
             // Update spacing
             navbar.classList.toggle('logged-out', !isLoggedIn);
 
+            // Ensure modal is hidden
+            const modal = document.querySelector('#loginModal');
+            if (modal) {
+                modal.style.display = 'none';
+            }
+
             // Trigger login form setup
             setupLogin();
         })
@@ -84,19 +90,27 @@ function openLoginModal() {
 
 function closeLoginModal() {
     const modal = document.getElementById('loginModal');
+    const loginForm = document.getElementById('loginForm');
     if (modal) {
         modal.style.display = 'none';
-        console.log('Login modal closed');
+        if (loginForm) {
+            loginForm.reset();
+            console.log('Login modal closed and form reset');
+        } else {
+            console.log('Login modal closed, but login form not found');
+        }
     } else {
         console.error('Login modal not found');
     }
 }
 
+// Expose closeLoginModal globally for onclick
+window.closeLoginModal = closeLoginModal;
+
 window.onclick = function(event) {
     const modal = document.getElementById('loginModal');
-    if (event.target == modal) {
-        modal.style.display = 'none';
-        console.log('Modal closed by clicking outside');
+    if (modal && event.target === modal) {
+        closeLoginModal();
     }
 };
 
@@ -154,5 +168,3 @@ function setupLogin() {
         setTimeout(setupLogin, 100);
     }
 }
-
-// Don't render navbar until auth state is confirmed
