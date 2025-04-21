@@ -309,6 +309,7 @@ submitEmail.addEventListener("submit", (e) => {
     const popupText = document.getElementById("popupText");
     popupText.innerHTML = "You have selected " + selected.length + " images. Confirm request?";
     const popupConfirmButton = document.getElementById("popupButton");
+    popupConfirmButton.style.display = "inline-block";
     const popupClose = document.getElementById("popupX");
     popupClose.addEventListener("click", (e) => {
         popupDiv.style.display = "none";
@@ -326,7 +327,11 @@ submitEmail.addEventListener("submit", (e) => {
                 'Content-Type': 'text/plain;charset=utf-8',
             },
         });
-        popupDiv.style.display = "none"; 
+        //display the confirmation
+        popupText.innerHTML = "Your request has been sent! You may now close this popup.";
+
+        popupConfirmButton.style.display = "none";
+        //popupDiv.style.display = "none"; 
     });
 
 
