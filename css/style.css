@@ -39,7 +39,7 @@ header {
     flex-direction: row;
     justify-content: space-around;
     align-items: flex-start;
-    height: 70px;
+    height: 80px;
     position: fixed;
     left: 0;
     right: 0;
@@ -55,7 +55,7 @@ header {
     text-decoration: none;
     font-size: 18px;
     text-align: center;
-    height: 70px;
+    height: 75px;
 }
 
 .navbar.logged-out .navbarPage {
