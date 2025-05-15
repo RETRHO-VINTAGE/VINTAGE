@@ -257,14 +257,20 @@ const generateCalendar = () => {
 
                 let foundFirstNight = false;
                 while(!foundFirstNight){
-                    //console.log(data.values[currentObsNight][0]); //string
+                    console.log(data.values[currentObsNight][0]); //string
                     const nightDateParts = data.values[currentObsNight][0].split("/");
-                    //console.log(nightDateParts); //[0] is month, [1] is day, [2] is year
+                    console.log(nightDateParts); //[0] is month, [1] is day, [2] is year
                     if(Number(nightDateParts[2]) < year){
-                        currentObsNight--; //move up a date to get towrads correct year
+                        currentObsNight--; //move up a date to get towards correct year
                     }
                     else if(Number(nightDateParts[0]) < month){ //in correct year, not month
                         currentObsNight--; //move towards correct month
+                    }
+                    else if(Number(nightDateParts[0]) == month+1){
+                        //made it into this month
+                        foundFirstNight = true;
+                        console.log(nightDateParts); //[0] is month, [1] is day, [2] is year
+
                     }
                     else if(Number(nightDateParts[1]) < monthlastdate-dayone+1){
                         //in correct month (the prev month), but too early in days
@@ -274,6 +280,7 @@ const generateCalendar = () => {
                         //in correct month, and within the boundaries of the calendar
                         foundFirstNight = true;
                     }
+                    
                 }
                 //console.log(data.values[currentObsNight]); //first date in the calendar
 
